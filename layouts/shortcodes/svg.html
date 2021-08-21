@@ -1,0 +1,2 @@
+{{ $svg := resources.Get (.Get "src") }}
+<img id="{{ .Get "id" }}" src="{{ $svg.RelPermalink }}" alt="{{ .Get "alt" }}" />

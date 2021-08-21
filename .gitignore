@@ -1,0 +1,13 @@
+# Visual Studio
+.vs/
+
+# Build Folders
+bin/
+obj/
+logs/
+resources/
+
+# Package Managers
+packages/
+node_modules/
+npm-debug.log

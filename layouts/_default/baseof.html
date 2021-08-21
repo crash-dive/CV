@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="Description" content="{{ .Description }}" />
+
+        {{ if .IsHome }}
+            <title>Crash Dive - Jonathon Smith</title>
+        {{else}}
+            <title>Crash Dive - Jonathon Smith - {{ .Page.Title }}</title>
+        {{ end }}
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+        {{ $baseCss := resources.Get "css/base.css" | minify | fingerprint "sha512" }}
+        <link href="{{ $baseCss.RelPermalink }}" rel="stylesheet" integrity="{{ $baseCss.Data.Integrity }}" crossorigin="anonymous" />
+
+        {{ range .Params.css }}
+            {{ $pageCss := resources.Get (print "css/" . ".css") | minify | fingerprint "sha512" }}
+            <link href="{{ $pageCss.RelPermalink }}" rel="stylesheet" integrity="{{ $pageCss.Data.Integrity }}" crossorigin="anonymous" />
+        {{ end }}
+
+        {{ if isset .Params "js" }} 
+            {{ range .Params.js }}
+                {{ $js := resources.Get (print "js/" . ".js") | minify | fingerprint "sha512" }}
+                <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+            {{ end }}
+        {{ end }}
+    </head>
+    <body>
+        <header>
+            <button id="nav-button" type="button">
+                <span id="nav-button-box">
+                    <span id="nav-button-inner"></span>
+                </span>
+            </button>
+            <nav id="nav-menu">
+                <a href="/" {{ if .IsHome }} class="current-page" {{ end }}>Home</a>
+                <a href="/about" {{ if eq .RelPermalink "/about/" }} class="current-page" {{ end }}>About</a>
+                <a href="/contact" {{ if eq .RelPermalink "/contact/" }} class="current-page" {{ end }}>Contact</a>
+            </nav>
+        </header>
+        <main>
+            {{ block "main" . }}
+                {{ .Content }}
+            {{ end }}
+        </main>
+    </body>
+
+    <script>
+        let navButton = document.getElementById('nav-button');
+        let navMenu = document.getElementById('nav-menu');
+
+        navButton.addEventListener('click', function() {
+            if (navButton.classList.contains('is-active')) {
+                navButton.classList.remove('is-active')
+                navMenu.classList.remove('is-active')
+            }
+            else {
+                navButton.classList.add('is-active');
+                navMenu.classList.add('is-active');
+            }
+        });
+      </script>
+</html>

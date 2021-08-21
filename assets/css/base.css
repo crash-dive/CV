@@ -1,0 +1,163 @@
+:root {
+    --dark-red: #8B0000;
+    --background-black: #313131;
+}
+
+@font-face {
+    font-family: spantaran;
+    src: url(../fonts/spantaran.ttf);
+} 
+
+a {
+    text-decoration: none;
+    color: var(--dark-red);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--background-black);
+}
+
+header {
+    position: absolute;
+}
+
+    #nav-button {
+        position: fixed;
+        top :2%;
+        right: 1%;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        overflow: visible; 
+        display: inline-block;
+        cursor: pointer;
+        transition-property: opacity, filter;
+        transition-duration: 0.15s;
+        transition-timing-function: linear;
+        font: inherit;
+        color: inherit;
+        text-transform: none;
+        background-color: transparent;
+        z-index: 20;
+    }
+        #nav-button-box {
+            width: 40px;
+            height: 24px;
+            display: inline-block;
+            position: relative; 
+        }
+
+        #nav-button-inner, #nav-button-inner::before, #nav-button-inner::after {
+            width: 40px;
+            height: 4px;
+            background-color: var(--dark-red);
+            border-radius: 4px;
+            position: absolute;
+            transition-property: transform;
+            transition-duration: 0.15s;
+            transition-timing-function: ease; 
+        }
+
+            #nav-button #nav-button-inner {
+                display: block;
+                top: 50%;
+                margin-top: -2px; 
+                top: auto;
+                bottom: 0;
+                transition-duration: 0.13s;
+                transition-delay: 0s;
+                transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+            }
+            
+                #nav-button-inner::before, #nav-button-inner::after {
+                    content: "";
+                    display: block; 
+                }
+                
+                #nav-button #nav-button-inner::before {
+                    top: -10px;
+                    transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+                }
+                
+                #nav-button #nav-button-inner::after {
+                    top: -20px;
+                    bottom: -10px; 
+                    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0s linear;
+                }
+
+        #nav-button.is-active #nav-button-inner,
+        #nav-button.is-active #nav-button-inner::before,
+        #nav-button.is-active #nav-button-inner::after {
+            background-color: white; 
+        }
+
+        #nav-button:hover.is-active #nav-button-inner,
+        #nav-button:hover.is-active #nav-button-inner::before,
+        #nav-button:hover.is-active #nav-button-inner::after {
+            background-color: black; 
+        }
+
+            #nav-button.is-active #nav-button-inner {
+                transform: translate3d(0, -10px, 0) rotate(-45deg);
+                transition-delay: 0.22s;
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+            }
+
+                #nav-button.is-active #nav-button-inner::before {
+                    top: 0;
+                    transform: rotate(90deg);
+                    transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1); 
+                }
+
+                #nav-button.is-active #nav-button-inner::after {
+                    top: 0;
+                    opacity: 0;
+                    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0s 0.22s linear; 
+                }
+
+    #nav-button:hover {
+        color:white; 
+    }
+
+        #nav-button:hover #nav-button-inner,
+        #nav-button:hover #nav-button-inner::before,
+        #nav-button:hover #nav-button-inner::after {
+            background-color: white; 
+        }
+
+    #nav-menu {
+        position: fixed;
+        display: flex;
+        top: 0;
+        right: -70%;
+        flex-direction: column;
+        align-items: flex-end;
+        background: var(--dark-red);
+        z-index: 10;
+        padding: 50px 6% 0 35%;
+        height: 100%;
+        clip-path: polygon(0 0, 2% 10%, 40% 60%, 110% 100%, 100% 100%, 100% 0);
+        transition: 300ms right cubic-bezier(0.77, 0, 0.175, 1)
+    }
+
+        #nav-menu.is-active {
+            right: 0;
+        }
+
+        #nav-menu a {
+            font-size: 3em;
+            font-family: spantaran, Arial Black, Arial, Helvetica, sans-serif;
+            color:white;
+        }
+
+        #nav-menu a:hover {
+            color: black;
+        }
