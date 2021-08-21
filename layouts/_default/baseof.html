@@ -43,10 +43,10 @@
                 <a href="/about" {{ if eq .RelPermalink "/about/" }} class="current-page" {{ end }}>About</a>
                 <a href="/contact" {{ if eq .RelPermalink "/contact/" }} class="current-page" {{ end }}>Contact</a>
                 <div id="social-logos">
-                    {{ $github := resources.Get "images/github.svg" }}
-                    {{ $stackOverflow := resources.Get "images/stack-overflow.svg" }}
-                    {{ $facebook := resources.Get "images/facebook.svg" }}
-                    {{ $linkedIn := resources.Get "images/linked-in.svg" }}
+                    {{ $github := resources.Get "images/github.svg" | minify }}
+                    {{ $stackOverflow := resources.Get "images/stack-overflow.svg" | minify }}
+                    {{ $facebook := resources.Get "images/facebook.svg" | minify }}
+                    {{ $linkedIn := resources.Get "images/linked-in.svg" | minify }}
 
                     <a id="linked-in-link" href="https://www.linkedin.com/in/jonathon-ronald-smith/">
                         <img src="{{ $linkedIn.RelPermalink }}" alt="LinkedIn logo" />
