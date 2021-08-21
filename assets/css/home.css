@@ -1,5 +1,5 @@
 #name-callout h1 {
-    font-family: spantaran, Arial Black, Arial, Helvetica, sans-serif;
+    font-family: var(--spantaran);
     color: var(--dark-red);
     padding: 0;
     margin: 0;
@@ -7,7 +7,7 @@
 
 #name-callout ul {
     font-size: 1.6em;
-    font-family: Arial Black, Arial, Helvetica, sans-serif;
+    font-family: var(--arial-black);
     font-style: italic;
     color:white;
     padding: 0;
@@ -17,13 +17,13 @@
 
 #description-callout {
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--arial);
     font-size: 1.2em;
 }
 
     #technology-leader, #description-callout dfn {
         color: var(--dark-red);
-        font-family: spantaran, Arial Black, Arial, Helvetica, sans-serif;
+        font-family: var(--spantaran);
         font-style: normal;
     }
     

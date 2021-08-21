@@ -7,7 +7,7 @@ main {
 #email, #frame {
     position: fixed;
     box-sizing: border-box;
-    font-family: spantaran, Arial Black, Arial, Helvetica, sans-serif;
+    font-family: var(--spantaran);
 
     height: 50%;
     width: 90%;

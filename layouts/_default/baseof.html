@@ -15,7 +15,9 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
+        {{ $spantaranFont := resources.Get "fonts/spantaran.ttf" }}
         {{ $baseCss := resources.Get "css/base.css" | minify | fingerprint "sha512" }}
+        <link href="{{ $spantaranFont.RelPermalink }}" rel="preload" as="font" type="font/ttf" crossorigin="anonymous">
         <link href="{{ $baseCss.RelPermalink }}" rel="stylesheet" integrity="{{ $baseCss.Data.Integrity }}" crossorigin="anonymous" />
 
         {{ range .Params.css }}
@@ -49,16 +51,16 @@
                     {{ $linkedIn := resources.Get "images/linked-in.svg" | minify }}
 
                     <a id="linked-in-link" href="https://www.linkedin.com/in/jonathon-ronald-smith/">
-                        <img src="{{ $linkedIn.RelPermalink }}" alt="LinkedIn logo" />
+                        <img width="30" height="30" src="{{ $linkedIn.RelPermalink }}" alt="LinkedIn logo" />
                     </a>
                     <a id="facebook-link" href="https://www.facebook.com/jonathon.ronald.smith/">
-                        <img src="{{ $facebook.RelPermalink }}" alt="Facebook logo" />
+                        <img width="30" height="30" src="{{ $facebook.RelPermalink }}" alt="Facebook logo" />
                     </a>
                     <a id="github-link" href="https://github.com/crash-dive/">
-                        <img src="{{ $github.RelPermalink }}" alt="GitHub logo" />
+                        <img width="30" height="30" src="{{ $github.RelPermalink }}" alt="GitHub logo" />
                     </a>
                     <a id="stack-overflow-link"  href="https://stackoverflow.com/story/crash-dive">
-                        <img src="{{ $stackOverflow.RelPermalink }}" alt="Stack Overflow logo" />
+                        <img width="30" height="30" src="{{ $stackOverflow.RelPermalink }}" alt="Stack Overflow logo" />
                     </a>
                     <p class="social-name" id="linked-in-name">LinkedIn</p>
                     <p class="social-name" id="facebook-name">Facebook</p>

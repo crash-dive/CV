@@ -2,11 +2,15 @@
     --dark-red: #8B0000;
     --very-dark-red: #660000;
     --background-black: #313131;
+    --spantaran: spantaran, Arial Black, Arial, Helvetica, sans-serif;
+    --arial-black: Arial Black, Arial, Helvetica, sans-serif;
+    --arial: Arial, Helvetica, sans-serif;
 }
 
 @font-face {
     font-family: spantaran;
-    src: url(../fonts/spantaran.ttf);
+    src: url(../fonts/spantaran.ttf) format("truetype");
+    font-display: swap;
 }
 
 a {
@@ -176,7 +180,7 @@ header {
 
         #nav-menu > a {
             font-size: 3em;
-            font-family: spantaran, Arial Black, Arial, Helvetica, sans-serif;
+            font-family: var(--spantaran);
             color:white;
         }
 
@@ -193,17 +197,15 @@ header {
             }
 
                 #social-logos a img {
-                    width: 30px;
                     transition: all .2s ease-in-out;
                 }
 
                 #social-logos a img:hover {
-                    width: 30px;
                     transform: scale(1.2);
                 }
 
             #social-logos .social-name {
-                font-family: spantaran, Arial Black, Arial, Helvetica, sans-serif;
+                font-family: var(--spantaran);
                 color:white;
                 text-align: center;
                 display: none;
