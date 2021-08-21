@@ -6,7 +6,7 @@
 @font-face {
     font-family: spantaran;
     src: url(../fonts/spantaran.ttf);
-} 
+}
 
 a {
     text-decoration: none;
@@ -141,7 +141,7 @@ header {
             background-color: white; 
         }
 
-    #nav-menu {
+    #nav-menu, #nav-menu-frame {
         position: fixed;
         display: flex;
         top: 0;
@@ -149,12 +149,20 @@ header {
         box-sizing: border-box;
         flex-direction: column;
         align-items: flex-end;
-        background: var(--dark-red);
         z-index: 10;
         transition: 300ms right cubic-bezier(0.77, 0, 0.175, 1)
     }
 
-        #nav-menu.is-active {
+    #nav-menu {
+        background: var(--dark-red);
+    }
+    
+    #nav-menu-frame {
+        background: black;
+        transform: scale(1.1);
+    }
+
+        #nav-menu.is-active, #nav-menu-frame.is-active {
             right: 0;
         }
 
@@ -212,19 +220,30 @@ header {
                 }
 
 @media (max-width: 1023px) {
-    #nav-menu {
+    #nav-menu, #nav-menu-frame {
         width: 100%;
-        right: -100%;
         padding: 50px 5% 0 0;
         clip-path: polygon(0 0, 0 30%, 20% 69%, 110% 100%, 100% 100%, 100% 0);
+    }
+
+    #nav-menu {
+        right: -100%;
+    }
+    #nav-menu-frame {
+        right: -200%;
     }
 }
 
 @media (min-width: 1024px) {
-    #nav-menu {
+    #nav-menu, #nav-menu-frame {
         width: 58%;
-        right: -58%;
         padding: 50px 5% 0 0;
-        clip-path: polygon(0 0, 2% 10%, 40% 60%, 110% 100%, 100% 100%, 100% 0);
+        clip-path: polygon(0 0, 40% 60%, 110% 100%, 100% 100%, 100% 0);
+    }
+    #nav-menu {
+        right: -58%;
+    }
+    #nav-menu-frame {
+        right: -100%;
     }
 }
