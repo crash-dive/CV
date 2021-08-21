@@ -142,7 +142,7 @@ header {
         align-items: flex-end;
         background: var(--dark-red);
         z-index: 10;
-        padding: 50px 6% 0 35%;
+        padding: 50px 5% 0 40%;
         height: 100%;
         clip-path: polygon(0 0, 2% 10%, 40% 60%, 110% 100%, 100% 100%, 100% 0);
         transition: 300ms right cubic-bezier(0.77, 0, 0.175, 1)
@@ -152,12 +152,55 @@ header {
             right: 0;
         }
 
-        #nav-menu a {
+        #nav-menu > a {
             font-size: 3em;
             font-family: spantaran, Arial Black, Arial, Helvetica, sans-serif;
             color:white;
         }
 
-        #nav-menu a:hover {
+        #nav-menu > a:hover {
             color: black;
         }
+
+        #social-logos {
+            margin-top: 10px;
+        }
+
+            #social-logos a {
+                margin-left: 2px;
+            }
+
+                #social-logos a img {
+                    width: 30px;
+                    transition: all .2s ease-in-out;
+                }
+
+                #social-logos a img:hover {
+                    width: 30px;
+                    transform: scale(1.2);
+                }
+
+            #social-logos .social-name {
+                font-family: spantaran, Arial Black, Arial, Helvetica, sans-serif;
+                color:white;
+                text-align: center;
+                display: none;
+                margin: 0;
+                padding: 5px 0 0 0;
+            }
+
+                #linked-in-link:hover ~ #linked-in-name {
+                    display: block;
+                }
+
+                #facebook-link:hover ~ #facebook-name {
+                    display: block;
+                }
+
+                #github-link:hover ~ #github-name {
+                    display: block;
+                }
+
+                #stack-overflow-link:hover ~ #stack-overflow-name {
+                    display: block;
+                }

@@ -41,6 +41,29 @@
                 <a href="/" {{ if .IsHome }} class="current-page" {{ end }}>Home</a>
                 <a href="/about" {{ if eq .RelPermalink "/about/" }} class="current-page" {{ end }}>About</a>
                 <a href="/contact" {{ if eq .RelPermalink "/contact/" }} class="current-page" {{ end }}>Contact</a>
+                <div id="social-logos">
+                    {{ $github := resources.Get "images/github.svg" }}
+                    {{ $stackOverflow := resources.Get "images/stack-overflow.svg" }}
+                    {{ $facebook := resources.Get "images/facebook.svg" }}
+                    {{ $linkedIn := resources.Get "images/linked-in.svg" }}
+
+                    <a id="linked-in-link" href="https://www.linkedin.com/in/jonathon-ronald-smith/">
+                        <img src="{{ $linkedIn.RelPermalink }}" alt="LinkedIn logo" />
+                    </a>
+                    <a id="facebook-link" href="https://www.facebook.com/jonathon.ronald.smith/">
+                        <img src="{{ $facebook.RelPermalink }}" alt="Facebook logo" />
+                    </a>
+                    <a id="github-link" href="https://github.com/crash-dive/">
+                        <img src="{{ $github.RelPermalink }}" alt="GitHub logo" />
+                    </a>
+                    <a id="stack-overflow-link"  href="https://stackoverflow.com/story/crash-dive">
+                        <img src="{{ $stackOverflow.RelPermalink }}" alt="Stack Overflow logo" />
+                    </a>
+                    <p class="social-name" id="linked-in-name">LinkedIn</p>
+                    <p class="social-name" id="facebook-name">Facebook</p>
+                    <p class="social-name" id="github-name">Github</p>
+                    <p class="social-name" id="stack-overflow-name">Stack Overflow</p>
+                </div>
             </nav>
         </header>
         <main>
