@@ -1,5 +1,6 @@
 :root {
     --dark-red: #8B0000;
+    --very-dark-red: #660000;
     --background-black: #313131;
 }
 
@@ -23,6 +24,13 @@ body {
     padding: 0;
     height: 100%;
     background-color: var(--background-black);
+}
+
+hr.soild-white-line {
+    margin:0;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid white;
 }
 
 hr.faded-white-line {
