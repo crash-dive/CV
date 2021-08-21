@@ -25,6 +25,9 @@
             <link href="{{ $pageCss.RelPermalink }}" rel="stylesheet" integrity="{{ $pageCss.Data.Integrity }}" crossorigin="anonymous" />
         {{ end }}
 
+        {{ $navMenuJs := resources.Get "js/nav-menu.js" | minify | fingerprint "sha512" }}
+        <script src="{{ $navMenuJs.RelPermalink }}" defer integrity="{{ $navMenuJs.Data.Integrity }}"></script>
+
         {{ if isset .Params "js" }} 
             {{ range .Params.js }}
                 {{ $js := resources.Get (print "js/" . ".js") | minify | fingerprint "sha512" }}
@@ -75,23 +78,4 @@
             {{ end }}
         </main>
     </body>
-
-    <script>
-        let navButton = document.getElementById('nav-button');
-        let navMenu = document.getElementById('nav-menu');
-        let navMenuFrame = document.getElementById('nav-menu-frame');
-
-        navButton.addEventListener('click', function() {
-            if (navButton.classList.contains('is-active')) {
-                navButton.classList.remove('is-active')
-                navMenu.classList.remove('is-active')
-                navMenuFrame.classList.remove('is-active')
-            }
-            else {
-                navButton.classList.add('is-active');
-                navMenu.classList.add('is-active');
-                navMenuFrame.classList.add('is-active');
-            }
-        });
-      </script>
 </html>
