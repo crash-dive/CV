@@ -1,45 +1,22 @@
-#logo-outline, #logo-binary {
-    position: fixed;
-    width: 100%;
-    max-height: 100%;
-    padding: 1%;
-    box-sizing: border-box;
+#name-callout h1 {
+    font-family: spantaran, Arial Black, Arial, Helvetica, sans-serif;
+    color: var(--dark-red);
+    padding: 0;
+    margin: 0;
 }
 
-main {
-    position: fixed;
+#name-callout ul {
+    font-size: 1.6em;
+    font-family: Arial Black, Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color:white;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
-
-#name-callout {
-    position: fixed;
-    left: 5%;
-    bottom: 15%;
-}
-
-    #name-callout h1 {
-        font-size: 3.5em;
-        font-family: spantaran, Arial Black, Arial, Helvetica, sans-serif;
-        color: var(--dark-red);
-        padding: 0;
-        margin: 0;
-    }
-
-    #name-callout ul {
-        font-size: 1.6em;
-        font-family: Arial Black, Arial, Helvetica, sans-serif;
-        font-style: italic;
-        color:white;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
 
 #description-callout {
-    position: fixed;
-    right: 2%;
-    top: 10%;
     color: white;
-    width: 40%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
 }
@@ -64,14 +41,68 @@ main {
 
     #description-callout a {
         font-weight: bold;
+        white-space: nowrap;
     }
 
         #description-callout a:hover {
             text-decoration: underline;
         }
-
-    hr {
-        border: none;
-        border-bottom: 2px solid var(--background-black);
-        border-image: linear-gradient(to left, var(--background-black) 1%, white) 1 stretch;  
+    
+@media (max-width: 1023px) {
+    main {
+        padding: 0 10px 10px 10px;
+        text-align: center;
     }
+
+    #name-callout {
+        padding-top: 40px;
+    }
+
+        #name-callout h1 {
+            font-size: 2.5em;
+        }
+
+        #name-callout ul {
+            font-size: 1.2em;
+        }
+
+        #technology-leader {
+            display: block;
+        }
+}
+
+@media (min-width: 1024px) {
+    main {
+        position: fixed;
+    }
+
+    #name-callout {
+        position: fixed;
+        left: 5%;
+        bottom: 15%;
+    }
+
+        #name-callout h1 {
+            font-size: 3.5em;
+        }
+
+        #name-callout ul {
+            font-size: 1.6em;
+        }
+
+    #crash-dive {
+        position: fixed;
+        width: 100%;
+        max-height: 100%;
+        padding: 1%;
+        box-sizing: border-box;
+    }
+
+    #description-callout {
+        position: fixed;
+        right: 2%;
+        top: 10%;
+        width: 40%;
+        font-size: 1.2em;
+    }
+}

@@ -25,6 +25,14 @@ body {
     background-color: var(--background-black);
 }
 
+hr.faded-white-line {
+    margin:0;
+    padding: 0;
+    border: none;
+    border-bottom: 2px solid var(--background-black);
+    border-image: linear-gradient(to left, var(--background-black) 1%, white) 1 stretch;  
+}
+
 header {
     position: absolute;
 }
@@ -137,14 +145,12 @@ header {
         position: fixed;
         display: flex;
         top: 0;
-        right: -70%;
+        min-height: 100%;
+        box-sizing: border-box;
         flex-direction: column;
         align-items: flex-end;
         background: var(--dark-red);
         z-index: 10;
-        padding: 50px 5% 0 40%;
-        height: 100%;
-        clip-path: polygon(0 0, 2% 10%, 40% 60%, 110% 100%, 100% 100%, 100% 0);
         transition: 300ms right cubic-bezier(0.77, 0, 0.175, 1)
     }
 
@@ -204,3 +210,21 @@ header {
                 #stack-overflow-link:hover ~ #stack-overflow-name {
                     display: block;
                 }
+
+@media (max-width: 1023px) {
+    #nav-menu {
+        width: 100%;
+        right: -100%;
+        padding: 50px 5% 0 0;
+        clip-path: polygon(0 0, 0 30%, 20% 69%, 110% 100%, 100% 100%, 100% 0);
+    }
+}
+
+@media (min-width: 1024px) {
+    #nav-menu {
+        width: 58%;
+        right: -58%;
+        padding: 50px 5% 0 0;
+        clip-path: polygon(0 0, 2% 10%, 40% 60%, 110% 100%, 100% 100%, 100% 0);
+    }
+}
