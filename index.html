@@ -7,7 +7,7 @@
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
-<link href=/css/base.min.87ee81dbb0cd5b609b429eeeadd3b80d1a403716a7a7dc0f5e40b48a31fc6cd77d6aa0270bfc92e2d338c617c7446e26f5c2dfa5b3bacb9c0aa35505d8ad1778.css rel=stylesheet integrity="sha512-h+6B27DNW2CbQp7urdO4DRpANxanp9wPXkC0ijH8bNd9aqAnC/yS4tM4xhfHRG4m9cLfpbO6y5wKo1UF2K0XeA==" crossorigin=anonymous>
+<link href=/css/base.min.0ca113cc56db35b41aceccf1daa8126f6c7d3f4653cf5f846b9413e377c7273a2dee4ef3eb21bf4b9138154ae05ac7a6dc8fe30dc823fb006add881a3717c0da.css rel=stylesheet integrity="sha512-DKETzFbbNbQazszx2qgSb2x9P0ZTz1+Ea5QT43fHJzot7k7z6yG/S5E4FUrgWsem3I/jDcgj+wBq3YgaNxfA2g==" crossorigin=anonymous>
 <link href=/css/home.min.656fc5bed604950e197a41227aaa8f18a722d7e8dd6fb965541e1c2f26fbd019c545a88f9e7528c9b287232e921e9ad5fcbe2bc86f976c25d47148d3b69814b2.css rel=stylesheet integrity="sha512-ZW/FvtYElQ4ZekEieqqPGKci1+jdb7llVB4cLyb70BnFRaiPnnUoybKHIy6SHprV/L4ryG+XbCXUcUjTtpgUsg==" crossorigin=anonymous>
 </head>
 <body>
@@ -17,6 +17,7 @@
 <span id=nav-button-inner></span>
 </span>
 </button>
+<div id=nav-menu-frame></div>
 <nav id=nav-menu>
 <a href=/ class=current-page>Home</a>
 <a href=/about>About</a>
@@ -59,5 +60,5 @@
 </div>
 </main>
 </body>
-<script>let navButton=document.getElementById('nav-button'),navMenu=document.getElementById('nav-menu');navButton.addEventListener('click',function(){navButton.classList.contains('is-active')?(navButton.classList.remove('is-active'),navMenu.classList.remove('is-active')):(navButton.classList.add('is-active'),navMenu.classList.add('is-active'))})</script>
+<script>let navButton=document.getElementById('nav-button'),navMenu=document.getElementById('nav-menu'),navMenuFrame=document.getElementById('nav-menu-frame');navButton.addEventListener('click',function(){navButton.classList.contains('is-active')?(navButton.classList.remove('is-active'),navMenu.classList.remove('is-active'),navMenuFrame.classList.remove('is-active')):(navButton.classList.add('is-active'),navMenu.classList.add('is-active'),navMenuFrame.classList.add('is-active'))})</script>
 </html>

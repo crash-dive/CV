@@ -7,8 +7,8 @@
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
-<link href=/css/base.min.87ee81dbb0cd5b609b429eeeadd3b80d1a403716a7a7dc0f5e40b48a31fc6cd77d6aa0270bfc92e2d338c617c7446e26f5c2dfa5b3bacb9c0aa35505d8ad1778.css rel=stylesheet integrity="sha512-h+6B27DNW2CbQp7urdO4DRpANxanp9wPXkC0ijH8bNd9aqAnC/yS4tM4xhfHRG4m9cLfpbO6y5wKo1UF2K0XeA==" crossorigin=anonymous>
-<link href=/css/contact.min.cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e.css rel=stylesheet integrity="sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==" crossorigin=anonymous>
+<link href=/css/base.min.0ca113cc56db35b41aceccf1daa8126f6c7d3f4653cf5f846b9413e377c7273a2dee4ef3eb21bf4b9138154ae05ac7a6dc8fe30dc823fb006add881a3717c0da.css rel=stylesheet integrity="sha512-DKETzFbbNbQazszx2qgSb2x9P0ZTz1+Ea5QT43fHJzot7k7z6yG/S5E4FUrgWsem3I/jDcgj+wBq3YgaNxfA2g==" crossorigin=anonymous>
+<link href=/css/contact.min.d21ad9d28b97aec53949c96da3e1f39bbfd6f4f1c306fa3dd18ba4a9ec558869ce708ae33128fb876033460c67dbd429b8ad4056a2b368d64a28eec0e9cec0f6.css rel=stylesheet integrity="sha512-0hrZ0ouXrsU5Sclto+Hzm7/W9PHDBvo90YukqexViGnOcIrjMSj7h2AzRgxn29QpuK1AVqKzaNZKKO7A6c7A9g==" crossorigin=anonymous>
 </head>
 <body>
 <header>
@@ -17,6 +17,7 @@
 <span id=nav-button-inner></span>
 </span>
 </button>
+<div id=nav-menu-frame></div>
 <nav id=nav-menu>
 <a href=/>Home</a>
 <a href=/about>About</a>
@@ -42,7 +43,9 @@
 </nav>
 </header>
 <main>
+<div id=frame>enquires@crashdive.co.uk</div>
+<a id=email href=mailto:enquires@crashdive.co.uk>enquires@crashdive.co.uk</a>
 </main>
 </body>
-<script>let navButton=document.getElementById('nav-button'),navMenu=document.getElementById('nav-menu');navButton.addEventListener('click',function(){navButton.classList.contains('is-active')?(navButton.classList.remove('is-active'),navMenu.classList.remove('is-active')):(navButton.classList.add('is-active'),navMenu.classList.add('is-active'))})</script>
+<script>let navButton=document.getElementById('nav-button'),navMenu=document.getElementById('nav-menu'),navMenuFrame=document.getElementById('nav-menu-frame');navButton.addEventListener('click',function(){navButton.classList.contains('is-active')?(navButton.classList.remove('is-active'),navMenu.classList.remove('is-active'),navMenuFrame.classList.remove('is-active')):(navButton.classList.add('is-active'),navMenu.classList.add('is-active'),navMenuFrame.classList.add('is-active'))})</script>
 </html>
