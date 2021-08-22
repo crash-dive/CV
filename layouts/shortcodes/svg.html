@@ -1,2 +1,2 @@
-{{ $svg := resources.Get (.Get "src") }}
+{{ $svg := resources.Get (.Get "src") | minify }}
 <img id="{{ .Get "id" }}" src="{{ $svg.RelPermalink }}" alt="{{ .Get "alt" }}" />
