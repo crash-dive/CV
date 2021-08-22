@@ -10,10 +10,15 @@
         {{else}}
             <title>Crash Dive - Jonathon Smith - {{ .Page.Title }}</title>
         {{ end }}
-    
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+        {{ $faviconAppleTouch := resources.Get "/favicon-apple-touch.png" }}
+        {{ $favicon32 := resources.Get "/favicon-32x32.png" }}
+        {{ $favicon16 := resources.Get "/favicon-16x16.png" }}
+        {{ $favicon := resources.Get "/favicon.ico" }}
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ $faviconAppleTouch.RelPermalink }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon32.RelPermalink }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon16.RelPermalink }}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ $favicon.RelPermalink }}" />
 
         {{ $spantaranFont := resources.Get "fonts/spantaran.ttf" }}
         {{ $baseCss := resources.Get "css/base.css" | minify | fingerprint "sha512" }}
