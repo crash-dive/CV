@@ -1,0 +1,5 @@
+{{ $svg := resources.Get (.Get "src") | minify }}
+<a href="{{ .Get "href" }}">
+    <img id="{{ .Get "id" }}" src="{{ $svg.RelPermalink }}" alt="{{ .Get "alt" }}" />
+    <p>{{ .Get "alt" }}</p>
+</a>

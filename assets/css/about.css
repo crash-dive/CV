@@ -44,10 +44,14 @@ main p, main ul {
         flex-wrap: wrap;
     }
 
-    #tech-logos img {
-        height: 30px;
-        margin: 0 5px 5px 5px;
-    }
+        #tech-logos a {
+            text-align: center;
+            margin: 0 5px 5px 5px;
+        }
+
+            #tech-logos img {
+                height: 30px;
+            }
 
     #achievements-skills section {
         background: black;
