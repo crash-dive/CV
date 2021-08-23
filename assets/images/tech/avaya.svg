@@ -2,28 +2,10 @@
    xmlns="http://www.w3.org/2000/svg"
    aria-label="Avaya" 
    role="img"
-   viewBox="0 0 350 100"
+   viewBox="0 0 78 72"
 >
-   <defs>
-      <path
-         id="letter-a" 
-         fill="#CC0000"
-         d="M 0,72 L 34, 0 H 44 L 78, 72 H 64 L 39, 18 24, 51 H 47 L 52, 61 H 19 L 14, 72 Z" 
-      />
-      <path
-         id="letter-v" 
-         fill="#CC0000"
-         d="M 0, 0 L 34, 72 H 44 L 78, 0 H 64 L 39, 55 L 14, 0 Z"
-      />
-      <path
-         id="letter-y" 
-         fill="#CC0000"
-         d="M 0, 0 L 30, 71 L 17, 98 H 31 L 78, 0 H 63 L 37, 56 L 15, 0 Z" 
-      />
-   </defs>
-   <use x="4.0"   y="1.0"  href="#letter-a" />
-   <use x="69.0"  y="1.0"  href="#letter-v" />
-   <use x="133.0" y="1.0"  href="#letter-a" />
-   <use x="200.0" y="1.0"  href="#letter-y" />
-   <use x="264.0" y="1.0"  href="#letter-a" />
+  <path
+     fill="#cc0000"
+     d="M 0,72 34,0 H 44 L 78,72 H 64 L 39,18 24,51 h 23 l 5,10 H 19 l -5,11 z" 
+   />
 </svg>

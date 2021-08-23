@@ -33,6 +33,22 @@ main p, main ul {
         margin-bottom: 10px;
     }
 
+    #tech-logos {
+        background: black;
+        border: 1px solid var(--very-dark-red);
+        border-radius: 10px;
+        padding: 10px 5px 5px 5px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    #tech-logos img {
+        height: 30px;
+        margin: 0 5px 5px 5px;
+    }
+
     #achievements-skills section {
         background: black;
         border: 1px solid var(--very-dark-red);
