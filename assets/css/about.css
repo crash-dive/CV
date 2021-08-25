@@ -243,6 +243,10 @@ main p, main ul {
         display: none;
     }
 
+    h1 {
+        margin-top: 0;
+    }
+
     #achievements-skills, #tech-experience {
         break-after: page;
     }
