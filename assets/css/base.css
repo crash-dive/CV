@@ -39,89 +39,67 @@ body {
     cursor: pointer;
     background-color: transparent;
     z-index: 20;
+    width: 40px;
+    height: 24px;
 }
-    #nav-button-box {
-        position: relative; 
-        width: 40px;
-        height: 24px;
-        display: inline-block;
-    }
 
-    #nav-button-inner,
-    #nav-button-inner::before,
-    #nav-button-inner::after {
+    .nav-button-line {
         position: absolute;
         width: 40px;
         height: 4px;
         border-radius: 4px;
         background-color: var(--dark-red);
-        display: block; 
+        display: block;
+        transform: translate(0, 0) rotate(0);
+        transition: 
+            top .25s ease 0s,
+            transform .25s ease .25s; 
     }
 
-        #nav-button-inner {
-            top: 50%;
-            top: auto;
-            margin-top: -2px; 
-            bottom: 0;
-            transition: 0.13s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+        #nav-button-line-top {
+            top: 0; 
+            transform-origin: bottom left;
         }
 
-            #nav-button-inner::before {
-                content: "";
-                top: -10px;
-                transition: 
-                    top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), 
-                    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
-            }
-            
-            #nav-button-inner::after {
-                content: "";
-                top: -20px;
-                bottom: -10px; 
-                transition: 
-                    top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), 
-                    opacity 0s linear;
-            }
-
-    #nav-button.is-active #nav-button-inner,
-    #nav-button.is-active #nav-button-inner::before,
-    #nav-button.is-active #nav-button-inner::after {
-        background-color: white; 
-    }
-
-    #nav-button:hover.is-active #nav-button-inner,
-    #nav-button:hover.is-active #nav-button-inner::before,
-    #nav-button:hover.is-active #nav-button-inner::after {
-        background-color: black; 
-    }
-
-        #nav-button.is-active #nav-button-inner {
-            transform: translate3d(0, -10px, 0) rotate(-45deg);
-            transition-delay: 0.22s;
-            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+        #nav-button-line-mid {
+            top: 10px;
+            transform-origin: bottom right;
+        }
+        
+        #nav-button-line-bot {
+            top: 20px;
+            transform-origin: bottom right;
         }
 
-            #nav-button.is-active #nav-button-inner::before {
-                top: 0;
-                transform: rotate(90deg);
-                transition: 
-                    top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-                    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1); 
+            #nav-button:hover .nav-button-line,
+            #nav-button.is-open .nav-button-line {
+                background-color: white;
+            }
+        
+        #nav-button:hover.is-open .nav-button-line {
+            background-color: black;
+        }
+        
+        #nav-button.is-open .nav-button-line {
+            top: 20px;
+        }
+
+        #nav-button.is-closed .nav-button-line {
+            transition: 
+                top .25s ease .25s,
+                transform .25s ease 0s; 
+        }
+
+            #nav-button.is-open #nav-button-line-top {
+                transform: translate(7px, 0) rotate(-45deg);
+                transform-origin: bottom left;
             }
 
-            #nav-button.is-active #nav-button-inner::after {
-                top: 0;
-                opacity: 0;
-                transition: 
-                    top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-                    opacity 0s 0.22s linear; 
+            #nav-button.is-open #nav-button-line-bot,
+            #nav-button.is-open #nav-button-line-mid {
+                transform: translate(-7px, 0) rotate(45deg);
+                transform-origin: bottom right;
             }
-
-    #nav-button:hover #nav-button-inner,
-    #nav-button:hover #nav-button-inner::before,
-    #nav-button:hover #nav-button-inner::after {
-        background-color: white; 
-    }
 
 #nav-menu,
 #nav-menu-frame {
@@ -145,8 +123,8 @@ body {
     transform: scale(1.1);
 }
 
-    #nav-menu.is-active,
-    #nav-menu-frame.is-active {
+    #nav-menu.is-open,
+    #nav-menu-frame.is-open {
         right: 0;
     }
 
