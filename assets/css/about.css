@@ -20,14 +20,13 @@ main p, main span, main ul {
     border-radius: 10px;
 }
 
-    #summary h1 {
+    h1 {
         font-size: 3em;
         font-family: var(--spantaran);
         text-align: center;
     }
 
-    #summary ul {
-        list-style: none;
+    .skill-callout {
         text-align: center;
         font-size: 1.2em;
         font-family: var(--arial);
@@ -35,9 +34,14 @@ main p, main span, main ul {
         color: white;
     }
 
+    #achievements-skills {
+        break-after: page;
+    }
+
         #achievements-skills h2 {
             text-align: center;
             border-bottom: 1px solid var(--very-dark-red);
+            margin: 0 5px;
         }
 
         #achievements-skills ul {
@@ -71,10 +75,16 @@ main p, main span, main ul {
         }
 
             .tech-logos li {
-                width: 50%;
                 margin-bottom: 10px;
                 display: flex;
                 flex-direction: column;
+                box-sizing: border-box;
+            }
+            
+            .tech-logos li:nth-child(5) {
+                border: 1px dashed var(--very-dark-red);
+                border-radius: 10px;
+                justify-content: center;
             }
 
             .tech-logos a {
@@ -84,6 +94,7 @@ main p, main span, main ul {
                 transition: all .1s ease-in-out;
                 font-style: italic;
                 color: black;
+                text-align: center;
             }
 
                 .tech-logos a:hover {
@@ -101,11 +112,18 @@ main p, main span, main ul {
         margin-top: 10px;
         padding: 10px;
     }
+    .employment-section h2{
+        border-bottom: 1px solid var(--dark-red);
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
     
     .employer-and-time {
+        padding-bottom: 5px;
         margin-bottom: 10px;
         display: flex;
         align-items: center;
+        border-bottom: 1px solid var(--dark-red);
     }
     
         .employer-logo {
@@ -140,8 +158,8 @@ main p, main span, main ul {
             }
 
 @media (max-width: 1023px) {
-    #summary {
-        margin-top: 40px;
+    h1 {
+        margin-top: 45px;
     }
 
     #achievements-skills section {
@@ -156,15 +174,19 @@ main p, main span, main ul {
             border-bottom: none;
         }
 
-        .employment-section h2 {
-            text-align: center;
+        .tech-logos li {
+            width: 33.3%;
         }
 
-        .employer-and-time {
-            justify-content: space-around;
-            flex-direction: row-reverse;
-            text-align: center;
-        }
+    .employment-section h2 {
+        text-align: center;
+    }
+
+    .employer-and-time {
+        justify-content: space-around;
+        flex-direction: row-reverse;
+        text-align: center;
+    }
 
         .employment-duration {
             display: block;
@@ -199,6 +221,16 @@ main p, main span, main ul {
 
         .tech-sector:last-child {
             border-right: none;
+        }
+
+        .tech-logos li {
+            width: 50%;
+        }
+        
+        .tech-logos li:nth-child(5) {
+            justify-content: center;
+            width: 96%;
+            margin:0 2% 10px;
         }
 
     .employer-logo {
