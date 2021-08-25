@@ -9,9 +9,15 @@ h1, h2, h3 {
 }
 
 main p, main span, main ul {
-    color: white;
-    font-family: var(--arial);
     margin: 0;
+}
+
+#achievements-skills section, #tech-experience, .employment-section {
+    background: #ddd;
+    color: black;
+    font-family: var(--arial);
+    border: 1px solid var(--very-dark-red);
+    border-radius: 10px;
 }
 
     #summary h1 {
@@ -24,13 +30,9 @@ main p, main span, main ul {
         list-style: none;
         text-align: center;
         font-size: 1.2em;
+        font-family: var(--arial);
         padding: 0;
-    }
-
-    #achievements-skills section {
-        background: black;
-        border: 1px solid var(--very-dark-red);
-        border-radius: 10px;
+        color: white;
     }
 
         #achievements-skills h2 {
@@ -45,9 +47,6 @@ main p, main span, main ul {
         }
 
     #tech-experience {
-        background: black;
-        border: 1px solid var(--very-dark-red);
-        border-radius: 10px;
         padding: 0 5px 5px 5px;
         margin-top: 10px;
         break-after: page;
@@ -63,7 +62,7 @@ main p, main span, main ul {
         }
 
         .tech-logos {
-            margin-top: 10px;
+            margin-top: 5px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
@@ -84,6 +83,7 @@ main p, main span, main ul {
                 align-items: center;
                 transition: all .1s ease-in-out;
                 font-style: italic;
+                color: black;
             }
 
                 .tech-logos a:hover {
@@ -97,8 +97,6 @@ main p, main span, main ul {
                 }
 
     .employment-section {
-        background: black;
-        border: 1px solid var(--very-dark-red);
         border-radius: 10px;
         margin-top: 10px;
         padding: 10px;
@@ -108,7 +106,6 @@ main p, main span, main ul {
         margin-bottom: 10px;
         display: flex;
         align-items: center;
-        color: white;
     }
     
         .employer-logo {
