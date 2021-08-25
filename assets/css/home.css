@@ -21,7 +21,8 @@
     font-size: 1.2em;
 }
 
-    #technology-leader, #description-callout dfn {
+    #technology-leader,
+    #description-callout dfn {
         color: var(--dark-red);
         font-family: var(--spantaran);
         font-style: normal;
@@ -34,20 +35,29 @@
         #description-callout dfn {
             font-size: 1.2em;
         }
-
-    #ipa-definition {
-        font-style: italic;
-    }
-
-    #description-callout a {
-        font-weight: bold;
-        white-space: nowrap;
-    }
-
-        #description-callout a:hover {
-            text-decoration: underline;
+        
+        #description-callout a {
+            font-weight: bold;
+            white-space: nowrap;
+            color: var(--dark-red);
         }
-    
+
+            #description-callout a:hover {
+                text-decoration: underline;
+            }
+        
+        hr.faded-white-line {
+            margin:0;
+            padding: 0;
+            border: none;
+            border-bottom: 2px solid var(--background-black);
+            border-image: linear-gradient(to left, var(--background-black) 1%, white) 1 stretch;  
+        }
+
+        #ipa-definition {
+            font-style: italic;
+        }
+
 @media (max-width: 1023px) {
     main {
         padding: 0 10px 10px 10px;

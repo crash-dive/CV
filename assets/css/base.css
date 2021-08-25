@@ -15,7 +15,6 @@
 
 a {
     text-decoration: none;
-    color: var(--dark-red);
 }
 
 html {
@@ -30,22 +29,6 @@ body {
     background-color: var(--background-black);
 }
 
-hr.soild-white-line {
-    margin:0;
-    padding: 0;
-    border: none;
-    border-bottom: 1px solid white;
-}
-
-hr.faded-white-line {
-    margin:0;
-    padding: 0;
-    border: none;
-    border-bottom: 2px solid var(--background-black);
-    border-image: linear-gradient(to left, var(--background-black) 1%, white) 1 stretch;  
-}
-
-
 #nav-button {
     position: absolute;
     top :2%;
@@ -53,61 +36,51 @@ hr.faded-white-line {
     border: 0;
     margin: 0;
     padding: 0;
-    overflow: visible; 
-    display: inline-block;
     cursor: pointer;
-    transition-property: opacity, filter;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    font: inherit;
-    color: inherit;
-    text-transform: none;
     background-color: transparent;
     z-index: 20;
 }
     #nav-button-box {
+        position: relative; 
         width: 40px;
         height: 24px;
         display: inline-block;
-        position: relative; 
     }
 
-    #nav-button-inner, #nav-button-inner::before, #nav-button-inner::after {
+    #nav-button-inner,
+    #nav-button-inner::before,
+    #nav-button-inner::after {
+        position: absolute;
         width: 40px;
         height: 4px;
-        background-color: var(--dark-red);
         border-radius: 4px;
-        position: absolute;
-        transition-property: transform;
-        transition-duration: 0.15s;
-        transition-timing-function: ease; 
+        background-color: var(--dark-red);
+        display: block; 
     }
 
-        #nav-button #nav-button-inner {
-            display: block;
+        #nav-button-inner {
             top: 50%;
-            margin-top: -2px; 
             top: auto;
+            margin-top: -2px; 
             bottom: 0;
-            transition-duration: 0.13s;
-            transition-delay: 0s;
-            transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+            transition: 0.13s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
         }
-        
-            #nav-button-inner::before, #nav-button-inner::after {
+
+            #nav-button-inner::before {
                 content: "";
-                display: block; 
-            }
-            
-            #nav-button #nav-button-inner::before {
                 top: -10px;
-                transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+                transition: 
+                    top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), 
+                    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
             }
             
-            #nav-button #nav-button-inner::after {
+            #nav-button-inner::after {
+                content: "";
                 top: -20px;
                 bottom: -10px; 
-                transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0s linear;
+                transition: 
+                    top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), 
+                    opacity 0s linear;
             }
 
     #nav-button.is-active #nav-button-inner,
@@ -131,18 +104,18 @@ hr.faded-white-line {
             #nav-button.is-active #nav-button-inner::before {
                 top: 0;
                 transform: rotate(90deg);
-                transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1); 
+                transition: 
+                    top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+                    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1); 
             }
 
             #nav-button.is-active #nav-button-inner::after {
                 top: 0;
                 opacity: 0;
-                transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0s 0.22s linear; 
+                transition: 
+                    top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+                    opacity 0s 0.22s linear; 
             }
-
-#nav-button:hover {
-    color:white; 
-}
 
     #nav-button:hover #nav-button-inner,
     #nav-button:hover #nav-button-inner::before,
@@ -150,16 +123,17 @@ hr.faded-white-line {
         background-color: white; 
     }
 
-#nav-menu, #nav-menu-frame {
+#nav-menu,
+#nav-menu-frame {
     position: fixed;
-    display: flex;
+    box-sizing: border-box;
     top: 0;
     min-height: 100%;
-    box-sizing: border-box;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
+    transition: 300ms right cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 10;
-    transition: 300ms right cubic-bezier(0.77, 0, 0.175, 1)
 }
 
 #nav-menu {
@@ -171,7 +145,8 @@ hr.faded-white-line {
     transform: scale(1.1);
 }
 
-    #nav-menu.is-active, #nav-menu-frame.is-active {
+    #nav-menu.is-active,
+    #nav-menu-frame.is-active {
         right: 0;
     }
 
@@ -192,10 +167,6 @@ hr.faded-white-line {
         #social-logos a {
             margin-left: 2px;
         }
-
-            #social-logos a img {
-                transition: all .2s ease-in-out;
-            }
 
             #social-logos a img:hover {
                 transform: scale(1.2);
@@ -227,7 +198,8 @@ hr.faded-white-line {
             }
 
 @media (max-width: 1023px) {
-    #nav-menu, #nav-menu-frame {
+    #nav-menu,
+    #nav-menu-frame {
         width: 100%;
         padding: 50px 5% 0 0;
         clip-path: polygon(0 0, 0 30%, 20% 69%, 110% 100%, 100% 100%, 100% 0);
@@ -236,13 +208,15 @@ hr.faded-white-line {
     #nav-menu {
         right: -100%;
     }
+
     #nav-menu-frame {
         right: -200%;
     }
 }
 
 @media (min-width: 1024px) {
-    #nav-menu, #nav-menu-frame {
+    #nav-menu,
+    #nav-menu-frame {
         width: 58%;
         padding: 50px 5% 0 0;
         clip-path: polygon(0 0, 40% 60%, 110% 100%, 100% 100%, 100% 0);
