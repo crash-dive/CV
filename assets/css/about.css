@@ -36,17 +36,21 @@ main p, main ul {
         color: white;
     }
 
-    #achievements-skills h2 {
-        text-align: center;
-        border-bottom: 1px solid var(--very-dark-red);
-        margin: 0 5px;
+    #achievements-skills section {
+        flex-grow: 1;
     }
 
-    #achievements-skills ul {
-        padding-top: 10px;
-        padding-right: 10px;
-        padding-bottom:10px;
-    }
+        #achievements-skills h2 {
+            text-align: center;
+            border-bottom: 1px solid var(--very-dark-red);
+            margin: 0 5px;
+        }
+
+        #achievements-skills ul {
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom:10px;
+        }
 
     #tech-experience {
         padding: 0 5px 5px 5px;
