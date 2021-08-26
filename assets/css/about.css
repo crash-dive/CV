@@ -11,10 +11,7 @@ main p, main ul {
     margin: 0;
 }
 
-#achievements-skills section,
-#tech-experience,
-.employment-section,
-#other-info {
+.panel {
     background: #ddd;
     color: black;
     font-family: var(--arial);
@@ -37,31 +34,75 @@ main p, main ul {
         color: white;
     }
 
-    #achievements-skills section {
-        flex-grow: 1;
+    #achievements-skills {
+        margin-bottom: 10px;
     }
 
-        #achievements-skills h2 {
+        #achievements-skills section {
+            flex-grow: 1;
+        }
+
+            #achievements-skills h2 {
+                text-align: center;
+                border-bottom: 1px solid var(--very-dark-red);
+                margin: 0 5px;
+            }
+
+            #achievements-skills ul {
+                padding-top: 10px;
+                padding-right: 10px;
+                padding-bottom:10px;
+            }
+
+    #contact-info {
+        display: grid; 
+        gap: 10px 10px; 
+        margin-bottom: 10px;
+    }
+    
+        #contact-info section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact-info h2 {
             text-align: center;
             border-bottom: 1px solid var(--very-dark-red);
+            margin: 0;
             margin: 0 5px;
         }
 
-        #achievements-skills ul {
-            padding-top: 10px;
-            padding-right: 10px;
-            padding-bottom:10px;
+        #contact-info a,
+        #contact-info p {
+            color: black;
+            font-size: 1.1em;
+            display: block;
+            margin: 0;
+            padding: 10px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
+            #contact-info a:hover {
+                text-decoration: underline;
+            }
 
     #tech-experience {
         padding: 0 5px 5px 5px;
-        margin-top: 10px;
     }
     
         #tech-experience h2{
             text-align: center;
             border-bottom: 1px solid var(--very-dark-red);
             margin: 0;
+        }
+
+        .tech-sector h3 {
+            text-align: center;
+            border-bottom: 1px dashed var(--very-dark-red);
+            margin: 0 5px;
         }
 
         .tech-logos {
@@ -79,26 +120,16 @@ main p, main ul {
                 flex-direction: column;
                 box-sizing: border-box;
             }
-            
-            .tech-logos li.tech-sector-name {
-                border: 1px dashed var(--very-dark-red);
-                border-radius: 10px;
-                justify-content: center;
-            }
-
-                .tech-sector-name h3 {
-                    text-align: center;
-                    margin: 0;
-                }
 
             .tech-logos a {
                 display: flex;
+                height: 100%;
                 flex-direction: column;
                 align-items: center;
+                justify-content: space-between;
                 transition: all .1s ease-in-out;
                 font-style: italic;
                 color: black;
-                text-align: center;
             }
 
                 .tech-logos a:hover {
@@ -111,13 +142,13 @@ main p, main ul {
                     margin-bottom: 2px;
                 }
 
-    .employment-section {
+    .employment-panel {
         border-radius: 10px;
         margin-top: 10px;
-        padding: 10px;
+        padding: 5px 10px 10px 10px;
     }
 
-        .employment-section h2{
+        .employment-panel h2{
             margin: 0;
         }
         
@@ -190,7 +221,15 @@ main p, main ul {
     #achievements-skills section {
         margin-top: 10px;
     }
-    
+
+    #contact-info {
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr; 
+        grid-template-areas: 
+            ". ."
+            ". ."; 
+    }
+
     .tech-sector {
         border-bottom: 1px solid var(--very-dark-red);
     }
@@ -199,11 +238,17 @@ main p, main ul {
             border-bottom: none;
         }
 
+        .tech-logos li.tech-sector-name {
+            border: 1px dashed var(--very-dark-red);
+            border-radius: 10px;
+            justify-content: center;
+        }
+        
         .tech-logos li {
-            width: 33.3%;
+            width: 50%;
         }
 
-    .employment-section h2 {
+    .employment-panel h2 {
         text-align: center;
     }
 
@@ -230,8 +275,10 @@ main p, main ul {
         margin-right: 0;
     }
 
-    #tech-experience h2{
-        margin-bottom: 10px;
+    #contact-info {
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 1fr; 
+        grid-template-areas: ". . . .";
     }
 
     #tech-sectors {
@@ -250,12 +297,6 @@ main p, main ul {
 
         .tech-logos li {
             width: 50%;
-        }
-        
-        .tech-logos li.tech-sector-name {
-            justify-content: center;
-            width: 96%;
-            margin:0 2% 10px;
         }
 
     .employer-logo {
@@ -278,6 +319,10 @@ main p, main ul {
 }
 
 @media print {
+    body {
+        background: white;
+    }
+
     header {
         display: none;
     }
@@ -286,19 +331,25 @@ main p, main ul {
         margin-top: 0;
     }
 
-    #achievements-skills, 
-    #tech-experience,
+    .tagline {
+        color: ababab;
+        font-weight: bold;
+    }
+
+    .panel {
+        background: white;
+    }
+
+    #contact-info, 
     #trampoline-coach {
         break-after: page;
     }
 
-        .tech-logos li {
-            width: 25%;
-        }
-        
-        .tech-logos li.tech-sector-name {
-            justify-content: center;
-            width: 96%;
-            margin:0 2% 10px;
-        }
+    .employment-duration {
+        display: inline;
+    }
+
+    .tech-logos li {
+        width: 12.5%;
+    }
   }

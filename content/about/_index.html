@@ -10,28 +10,28 @@ sitemap:
 <p class="tagline">Leader, mentor and communicator who builds technology empowered organisations</<p>
         
 <div id="achievements-skills">
-    <section>
+    <section class="panel">
         <h2>Management</h2>
         <ul>
             <li>Built and sat as board member for multi-million £ revenue automotive financial services company</li>
-            <li>Extensive commercial acumen with success at board level in sales, M&A and finance.</li>
+            <li>Extensive commercial acumen with success at executive and board level.</li>
             <li>Managed complex cross departmental teams</li>
             <li>Responsible for relationships with multiple suppliers and customers</li>
-            <li>Held IT budget and finance risk management responsibility, as well as performing oversight of all departments in boardroom</li>
+            <li>Held IT budget and finance risk management responsibility, as well as performing oversight of all departments in the boardroom</li>
         </ul>
     </section>
     
-    <section>
+    <section class="panel">
         <h2>Software &amp; Data</h2>
         <ul>
             <li>Highly skilled fullstack C# .NET Core web developer, who has designed and built many greenfield and legacy migration projects</li>
             <li>Built and mentored teams of software developers and DBAs</li>
-            <li>Skill software architect who has designed and managed large complex software systems</li>
-            <li>Extensive knowledge in designing and building SQL databases, gained through building multi-award winning data analytics systems.</li>
+            <li>Practiced software architect who has designed large complex software systems</li>
+            <li>Extensive knowledge in designing SQL databases, gained through building multi-award winning data analytics systems.</li>
         </ul>
     </section>
 
-    <section>
+    <section class="panel">
         <h2>IT &amp; Security</h2>
         <ul>
             <li>Able to explain technology to all using a deep technical knowledge combined with well honed communication skills</li>
@@ -43,18 +43,35 @@ sitemap:
     </section>
 </div>
 
-<section id="tech-experience">
+<div id="contact-info">
+    <section class="panel">
+        <h2>Email</h2>
+        <a href="mailto:cv@crashdive.co.uk">cv@crashdive.co.uk</a>
+    </section>
+    <section class="panel">
+        <h2>Phone</h2>
+        <p>Please Email</p>
+    </section>
+    <section class="panel">
+        <h2>Website</h2>
+        <a href="https://www.crashdive.co.uk/">crashdive.co.uk</a>
+    </section>
+    <section class="panel">
+        <h2>Location</h2>
+        <p>Kettering, UK</p>
+    </section>
+</div>
+
+<section id="tech-experience" class="panel">
     <h2>Technology Experience</h2>
     <div id="tech-sectors">
         <div class="tech-sector">
+            <h3>Data</h3>
             <ul class="tech-logos">
                 {{< tech id="sql-server"     alt="SQL Server"     src="images/tech/sql-server.svg"     href="https://microsoft.com/sql-server" >}}
                 {{< tech id="postgresql"     alt="Postgresql"     src="images/tech/postgresql.svg"     href="https://postgresql.org/" >}}
                 {{< tech id="mysql"          alt="MySQL"          src="images/tech/mysql.svg"          href="https://www.mysql.com/" >}}
                 {{< tech id="sisense"        alt="Sisense"        src="images/tech/sisense.svg"        href="https://periscopedata.com/" >}}
-                <li class="tech-sector-name">
-                    <h3>Data</h3>
-                </li>
                 {{< tech id="ef-core"        alt="EF Core"        src="images/tech/ef-core.svg"        href="https://docs.microsoft.com/ef/" >}}
                 {{< tech id="ado-dot-net"    alt="ADO.NET"        src="images/tech/ado-dot-net.svg"    href="https://docs.microsoft.com/dotnet/framework/data/adonet/" >}}
                 {{< tech id="access"         alt="Access"         src="images/tech/access.svg"         href="https://microsoft.com/microsoft-365/access" >}}
@@ -62,29 +79,25 @@ sitemap:
             </ul>
         </div>
         <div class="tech-sector">
+            <h3>Tooling</h3>
             <ul class="tech-logos">
                 {{< tech id="docker"         alt="Docker"         src="images/tech/docker.svg"         href="https://docker.com/" >}}
                 {{< tech id="git"            alt="Git"            src="images/tech/git.svg"            href="https://git-scm.com/" >}}
                 {{< tech id="node"           alt="Node"           src="images/tech/node.svg"           href="https://nodejs.org/" >}}
                 {{< tech id="npm"            alt="NPM"            src="images/tech/npm.svg"            href="https://npmjs.com/" >}}
-                <li class="tech-sector-name">
-                    <h3>Tooling</h3>
-                </li>
-                {{< tech id="visual-studio"  alt="Visual Studio"  src="images/tech/visual-studio.svg"  href="https://visualstudio.com/" >}}
+                {{< tech id="visual-studio"  alt="VisualStudio"   src="images/tech/visual-studio.svg"  href="https://visualstudio.com/" >}}
                 {{< tech id="vs-code"        alt="VS Code"        src="images/tech/vs-code.svg"        href="https://code.visualstudio.com/" >}}
                 {{< tech id="inkscape"       alt="Inkscape"       src="images/tech/inkscape.svg"       href="https://inkscape.org/" >}}
                 {{< tech id="yarn"           alt="Yarn"           src="images/tech/yarn.svg"           href="https://yarnpkg.com/" >}}
             </ul>
         </div>
         <div class="tech-sector">
+            <h3>Frameworks</h3>
             <ul class="tech-logos">
                 {{< tech id="dotnet-core"    alt=".NET Core"      src="images/tech/dotnet-core.svg"    href="https://dotnet.microsoft.com/" >}}
                 {{< tech id="webpack"        alt="Webpack"        src="images/tech/webpack.svg"        href="https://webpack.js.org/" >}}
                 {{< tech id="x-unit"         alt="xUnit"          src="images/tech/x-unit.svg"         href="https://xunit.net/" >}}
                 {{< tech id="coverlet"       alt="Coverlet"       src="images/tech/coverlet.svg"       href="https://github.com/coverlet-coverage" >}}
-                <li class="tech-sector-name">
-                    <h3>Libraries</h3>
-                </li>
                 {{< tech id="autofac"        alt="Autofac"        src="images/tech/autofac.svg"        href="https://autofac.org/" >}}
                 {{< tech id="gulp"           alt="Gulp"           src="images/tech/gulp.svg"           href="https://gulpjs.com/" >}}
                 {{< tech id="leaflet"        alt="Leaflet"        src="images/tech/leaflet.svg"        href="https://leafletjs.com/" >}}
@@ -92,14 +105,12 @@ sitemap:
             </ul>
         </div>
         <div class="tech-sector">
+            <h3>Languages</h3>
             <ul class="tech-logos">
                 {{< tech id="c-sharp"        alt="C#"             src="images/tech/c-sharp.svg"       href="https://docs.microsoft.com/dotnet/csharp/" >}}
                 {{< tech id="vba"            alt="VBA"            src="images/tech/vba.svg"           href="https://docs.microsoft.com/office/vba/" >}}
                 {{< tech id="typescript"     alt="TypeScript"     src="images/tech/typescript.svg"    href="https://www.typescriptlang.org/" >}}
                 {{< tech id="javascript"     alt="JavaScript"     src="images/tech/javascript.svg"    href="https://tc39.es/ecma262/" >}}
-                <li class="tech-sector-name">
-                    <h3>Languages</h3>
-                </li>
                 {{< tech id="html"           alt="HTML"           src="images/tech/html.svg"          href="https://html.spec.whatwg.org/" >}}
                 {{< tech id="css"            alt="CSS"            src="images/tech/css.svg"           href="https://www.w3.org/Style/CSS/specs.en.html" >}}
                 {{< tech id="svg"            alt="SVG"            src="images/tech/svg.svg"           href="https://www.w3.org/TR/SVG2/" >}}
@@ -107,14 +118,12 @@ sitemap:
             </ul>
         </div>
         <div class="tech-sector">
+            <h3>Infrastructure</h3>
             <ul class="tech-logos">
                 {{< tech id="azure"          alt="Azure"          src="images/tech/azure.svg"          href="https://azure.microsoft.com/" >}}
-                {{< tech id="windows-server" alt="Windows Srv"    src="images/tech/windows-server.svg" href="https://microsoft.com/windows-server" >}}
+                {{< tech id="windows-server" alt="WinSrv"         src="images/tech/windows-server.svg" href="https://microsoft.com/windows-server" >}}
                 {{< tech id="ubiquiti"       alt="Ubiquiti"       src="images/tech/ubiquiti.svg"       href="https://ui.com/" >}}
                 {{< tech id="juniper"        alt="Juniper"        src="images/tech/juniper.svg"        href="https://juniper.net/" >}}
-                <li class="tech-sector-name">
-                    <h3>IT</h3>
-                </li>
                 {{< tech id="hpe"            alt="HPE"            src="images/tech/hpe.svg"            href="https://hpe.com/" >}}
                 {{< tech id="avaya"          alt="Avaya"          src="images/tech/avaya.svg"          href="https://avaya.com/" >}}
                 {{< tech id="apc"            alt="APC"            src="images/tech/apc.svg"            href="https://apc.com/" >}}
@@ -124,7 +133,7 @@ sitemap:
     </div>
 </section>
 
-<section id="cio" class="employment-section">
+<section id="cio" class="panel employment-panel">
     <h2>Chief Information Officer</h2>
     
     <div class="employer-and-time">
@@ -154,7 +163,7 @@ sitemap:
     </div>
 </section>
 
-<section id="director" class="employment-section">
+<section id="director" class="panel employment-panel">
     <h2>Director</h2>
     <div class="employer-and-time">
         {{< employer id="fleet-assist-logo" alt="Fleet Assist Logo" src="images/employers/fleet-assist.svg" href="https://www.fleetassist.co.uk/" >}}
@@ -172,7 +181,7 @@ sitemap:
     </div>
 </section>
 
-<section id="trampoline-coach" class="employment-section">
+<section id="trampoline-coach" class="panel employment-panel">
     <h2>Trampoline Coach</h2>
     <div class="employer-and-time">
         {{< employer id="ntga-logo" alt="NTGA Logo" src="images/employers/ntga.svg" href="https://www.ntga.co.uk/" >}}
@@ -189,7 +198,7 @@ sitemap:
     </div>
 </section>
 
-<section id="aberystwyth" class="employment-section">
+<section id="aberystwyth" class="panel employment-panel">
     <h2>
         <div>Bachelor of Economic &amp; Social Studies in International Politics and the Third World</div>
         <div>1<sup>st</sup> Class with Honours</div>
@@ -210,8 +219,8 @@ sitemap:
     </div>
 </section>
 
-<section id="latimer" class="employment-section">
-    <h2>School Student</h2>
+<section id="latimer" class="panel employment-panel">
+    <h2>Secondary School Student</h2>
     <div class="employer-and-time">
         {{< employer id="latimer-logo" alt="Latimer Logo" src="images/employers/latimer.svg" href="https://www.latimer.org.uk/" >}}
         <div class="employer-name-and-time">
@@ -222,17 +231,17 @@ sitemap:
     </div>
     <div class="employment-description">
         <p>I attained A Levels in Law (B), English Literature (B) and History (B) as well as 10 GSCEs with grades A-C including Maths and English.</p>
-        <p>In my final year at school I became head of the school council and attended governers meetings as the student representative.</p>
+        <p>In my final year at school I became head of the school council and attended governors meetings as the student representative.</p>
     </div>
 </section>
 
-<section id="other-info">
+<section id="other-info" class="panel">
     <h2>Other Information</h2>
     <ul>
         <li><span>British Citizen</span>: With right to work in UK</li>
         <li><span>Driving Licence</span>: Held since 2013 with no penalty points</li>
-        <li><span>Enchanced DBS</span>: Passed multiple times for coaching work</li>
-        <li><span>Safeguarding</span>: Mulitple qualifications held which are regularaly updated</li>
+        <li><span>Enhanced DBS</span>: Passed multiple times for coaching work</li>
+        <li><span>Safeguarding</span>: Multiple qualifications held which are regularly updated</li>
         <li><span>First Aid</span>: Qualified multiple times and last updated in Sept 2020</li>
         <li><span>English</span>: Native speaker</li>
     </ul>
