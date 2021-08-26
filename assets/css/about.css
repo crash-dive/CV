@@ -150,6 +150,10 @@ main p, main ul {
             .employment-description p {
                 margin-bottom: 10px;
             }
+            
+                .employment-description p:last-child {
+                    margin-bottom: 0;
+                }
 
             .employment-description li {
                 margin-bottom: 5px;
