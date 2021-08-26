@@ -13,7 +13,8 @@ main p, main ul {
 
 #achievements-skills section,
 #tech-experience,
-.employment-section {
+.employment-section,
+#other-info {
     background: #ddd;
     color: black;
     font-family: var(--arial);
@@ -150,7 +151,7 @@ main p, main ul {
             .employment-description p {
                 margin-bottom: 10px;
             }
-            
+
                 .employment-description p:last-child {
                     margin-bottom: 0;
                 }
@@ -164,6 +165,22 @@ main p, main ul {
                     font-family: var(--arial-black);
                     font-size: 1.1em;
                 }
+
+
+    #other-info{
+        margin-top: 10px;
+        padding: 0 10px 10px 10px;
+    }
+
+        #other-info h2{
+            text-align: center;
+            border-bottom: 1px solid var(--very-dark-red);
+            margin: 0 0 5px 0;
+        }
+
+        #other-info span{
+            font-weight: bold;
+        }
 
 @media (max-width: 1023px) {
     h1 {
@@ -244,6 +261,20 @@ main p, main ul {
     .employer-logo {
         margin-right: 10px;
     }
+
+    #other-info{
+        margin-top: 10px;
+        padding: 0 10px 10px 10px;
+    }
+
+        #other-info ul{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #other-info li{
+            width: 50%;
+        }
 }
 
 @media print {
@@ -255,7 +286,9 @@ main p, main ul {
         margin-top: 0;
     }
 
-    #achievements-skills, #tech-experience {
+    #achievements-skills, 
+    #tech-experience,
+    #trampoline-coach {
         break-after: page;
     }
 
