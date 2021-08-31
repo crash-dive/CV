@@ -59,63 +59,22 @@ h1 {
     margin-bottom: 10px;
 }
 
-    #achievements-skills section {
-        flex-grow: 1;
-        flex-basis: 0;
-    }
-
-        #achievements-skills h2 {
-            text-align: center;
-            border-bottom: 1px solid var(--very-dark-red);
-            margin: 0 5px;
-        }
-
-        #achievements-skills ul {
-            padding-top: 10px;
-            padding-right: 10px;
-            padding-bottom:10px;
-        }
-
-        #achievements-skills .skill-name {
-            font: var(--arial-black);
-            font-weight: bold;
-        }
-
-#contact-info {
-    display: grid; 
-    gap: 10px 10px; 
-    margin-top: 10px;
-}
-
-    #contact-info section {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #contact-info h2 {
+    #achievements-skills h2 {
         text-align: center;
         border-bottom: 1px solid var(--very-dark-red);
-        margin: 0;
         margin: 0 5px;
     }
 
-    #contact-info a,
-    #contact-info p {
-        color: black;
-        font-size: 1.1em;
-        display: block;
-        margin: 0;
-        padding: 10px;
-        flex-grow: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+    #achievements-skills ul {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom:10px;
     }
 
-        #contact-info a:hover {
-            text-decoration: underline;
-        }
+    #achievements-skills .skill-name {
+        font: var(--arial-black);
+        font-weight: bold;
+    }
 
 #tech-experience {
     padding: 0 5px 5px 5px;
@@ -168,6 +127,75 @@ h1 {
                 max-width: 40px;
                 max-height: 40px;
                 margin-bottom: 2px;
+            }
+
+
+#contact-info {
+    display: grid; 
+    gap: 10px 10px; 
+    margin-top: 10px;
+}
+
+    #contact-info section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact-info h2 {
+        text-align: center;
+        border-bottom: 1px solid var(--very-dark-red);
+        margin: 0;
+        margin: 0 5px;
+    }
+
+    #contact-info a,
+    #contact-info p {
+        color: black;
+        font-size: 1.1em;
+        display: block;
+        margin: 0;
+        padding: 10px;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+        #contact-info a:hover {
+            text-decoration: underline;
+        }
+
+#education {
+    margin-top: 10px;
+    padding: 0 10px 10px 10px;
+}
+
+    #education h2 {
+        border-bottom: 1px solid var(--very-dark-red);
+        margin: 0 0 5px 0;
+    }
+
+    #educators {
+        list-style: none;
+        padding: 0;
+    }
+
+        .educator {
+            display: flex;
+        }
+
+        .educator-name-and-time {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .educator-logo {
+            display: flex;
+            align-items: center;
+        }
+            .educator-logo img {
+                height: 3em;
             }
 
 .employment-panel {
@@ -225,31 +253,6 @@ h1 {
                 font-size: 1.1em;
             }
 
-#education {
-    margin-top: 10px;
-    padding: 0 10px 10px 10px;
-}
-
-    #education h2 {
-        text-align: center;
-        border-bottom: 1px solid var(--very-dark-red);
-        margin: 0 0 5px 0;
-    }
-
-    .educator {
-        display: flex;
-        align-items: center;
-    }
-
-    .educator-logo img {
-        height: 2.5em;
-    }
-
-    .educator-name-and-time {
-        width: 30%;
-        text-align: center;
-    }
-
 #other-info{
     margin-top: 10px;
     padding: 0 10px 10px 10px;
@@ -265,7 +268,7 @@ h1 {
         font-weight: bold;
     }
 
-@media (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
     h1 {
         margin-top: 45px;
     }
@@ -300,6 +303,36 @@ h1 {
             width: 50%;
         }
 
+        #education h2 {
+            text-align: center;
+        }
+
+            .educator {
+                flex-wrap: wrap;
+            }
+                .educator:first-child {
+                    border-bottom: 1px solid var(--very-dark-red);
+                    padding-bottom: 5px;
+                    margin-bottom: 5px;
+                }
+
+                .educator-logo {
+                    border-bottom: 1px dashed var(--very-dark-red);
+                    padding-bottom: 5px;
+                    margin-bottom: 5px;
+                }
+
+                .educator-name-and-time {
+                    border-bottom: 1px dashed var(--very-dark-red);
+                    flex-grow: 1;
+                    margin-bottom: 5px;
+                }
+
+                .education-detail {
+                    width: 100%;
+                    padding-left: 1em;
+                }
+
     .employment-panel h2 {
         text-align: center;
     }
@@ -315,11 +348,16 @@ h1 {
         }
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
     #achievements-skills {
         display: flex;
         margin-top: 10px;
     }
+
+        #achievements-skills section {
+            flex-grow: 1;
+            flex-basis: 0;
+        }
 
     #achievements-skills section {
         margin-right: 10px;
@@ -329,28 +367,41 @@ h1 {
         margin-right: 0;
     }
 
+    #tech-sectors {
+        display: flex;
+    }
+
+        .tech-sector {
+            flex-grow: 1;
+            flex-basis: 0;
+            border-right: 1px solid var(--very-dark-red);
+        }
+
+            .tech-sector:last-child {
+                border-right: none;
+            }
+
+            .tech-logos li {
+                width: 50%;
+            }
+            
     #contact-info {
         grid-template-columns: 1fr 1fr 1fr 1fr; 
         grid-template-rows: 1fr; 
         grid-template-areas: ". . . .";
     }
 
-    #tech-sectors {
+    #educators {
         display: flex;
+        flex-direction: row;
     }
 
-    .tech-sector {
-        flex-grow: 1;
-        flex-basis: 0;
-        border-right: 1px solid var(--very-dark-red);
-    }
-
-        .tech-sector:last-child {
-            border-right: none;
+        .educator {
+            width: 50%;
         }
 
-        .tech-logos li {
-            width: 50%;
+        .educator:first-child {
+            border-right: 1px solid var(--very-dark-red);
         }
 
     .employer-logo {
@@ -393,9 +444,25 @@ h1 {
         background: white;
     }
 
+    .employment-panel,
+    #education,
+    #other-info {
+        border: none;
+    }
+
+        .employment-panel h2,
+        #education h2,
+        #other-info h2 {
+            border-top: 1px solid var(--very-dark-red);
+        }
+
     #contact-info,
     #cio {
         break-after: page;
+    }
+
+    #achievements-skills section {
+        margin-top: 10px;
     }
 
     #contact-info {
@@ -421,44 +488,50 @@ h1 {
     #tech-sectors {
         display: flex;
     }
+
+        .tech-sector {
+            flex-grow: 1;
+            flex-basis: 0;
+            border-right: 1px solid var(--very-dark-red);
+        }
+            
+            .tech-sector:last-child {
+                border-right: none;
+            }
+        
+            .tech-logos li {
+                width: 100%;
+            }
+            
+            .tech-logos li a {
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+            
+            .tech-logos li a img {
+                margin: 0 5px;
+                height: 1em;
+            }
     
-    .tech-sector {
-        flex-grow: 1;
-        flex-basis: 0;
-        border-right: 1px solid var(--very-dark-red);
-        border-bottom: none;
+    #education h2 {
+        border-bottom-style: dashed;
     }
-    
-    .tech-sector:last-child {
-        border-right: none;
-    }
-    
-    .tech-logos li {
-        width: 100%;
-    }
-    
-    .tech-logos li a {
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-    
-    .tech-logos li a img {
-        margin: 0 5px;
-        height: 1em;
+        .educator:first-child {
+            margin-bottom: 10px;
+        }
+
+        .educator-name-and-time {
+            width: 30%;
+        }
+
+    .employment-panel {
+        margin-top: 0;
     }
 
-    .employment-panel,
-    #education,
-    #other-info {
-        border: none;
+    .employer-logo {
+        margin-right: 10px;
     }
 
-    .employment-panel h2,
-    #education h2,
-    #other-info h2 {
-        border-top: 1px solid var(--very-dark-red);
-    }
-    
         .employer-and-time {
             border-top-style: dashed;
             border-bottom-style: dashed;
@@ -468,7 +541,12 @@ h1 {
             display: inline;
         }
 
-    #cio {
-        margin-top: 0;
+    #other-info ul{
+        display: flex;
+        flex-wrap: wrap;
     }
+
+        #other-info li{
+            width: 50%;
+        }
 }
