@@ -76,10 +76,15 @@ h1 {
             padding-bottom:10px;
         }
 
+        #achievements-skills .skill-name {
+            font: var(--arial-black);
+            font-weight: bold;
+        }
+
 #contact-info {
     display: grid; 
     gap: 10px 10px; 
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
     #contact-info section {
@@ -160,7 +165,7 @@ h1 {
             }
 
             .tech-logos a img {
-                width: 40px;
+                max-width: 40px;
                 max-height: 40px;
                 margin-bottom: 2px;
             }
@@ -178,8 +183,8 @@ h1 {
     .employer-and-time {
         display: flex;
         align-items: center;
-        border-top: 1px solid var(--dark-red);
-        border-bottom: 1px solid var(--dark-red);
+        border-top: 1px solid var(--very-dark-red);
+        border-bottom: 1px solid var(--very-dark-red);
         padding: 5px 0;
         margin: 5px 0;
     }
@@ -220,6 +225,30 @@ h1 {
                 font-size: 1.1em;
             }
 
+#education {
+    margin-top: 10px;
+    padding: 0 10px 10px 10px;
+}
+
+    #education h2 {
+        text-align: center;
+        border-bottom: 1px solid var(--very-dark-red);
+        margin: 0 0 5px 0;
+    }
+
+    .educator {
+        display: flex;
+        align-items: center;
+    }
+
+    .educator-logo img {
+        height: 2.5em;
+    }
+
+    .educator-name-and-time {
+        width: 30%;
+        text-align: center;
+    }
 
 #other-info{
     margin-top: 10px;
@@ -365,16 +394,81 @@ h1 {
     }
 
     #contact-info,
-    #tech-experience, 
-    #trampoline-coach {
+    #cio {
         break-after: page;
     }
 
-    .employment-duration {
-        display: inline;
+    #contact-info {
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 1fr; 
+        grid-template-areas: ". . . .";
     }
 
-    .tech-logos li {
-        width: 12.5%;
+        #contact-info section {
+            border: none;
+        }
+
+            #contact-info h2 {
+                border: none;
+                font-size: 1em;
+            }
+
+            #contact-info a,
+            #contact-info p { 
+                padding: 0;
+            }
+
+    #tech-sectors {
+        display: flex;
     }
-  }
+    
+    .tech-sector {
+        flex-grow: 1;
+        flex-basis: 0;
+        border-right: 1px solid var(--very-dark-red);
+        border-bottom: none;
+    }
+    
+    .tech-sector:last-child {
+        border-right: none;
+    }
+    
+    .tech-logos li {
+        width: 100%;
+    }
+    
+    .tech-logos li a {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    
+    .tech-logos li a img {
+        margin: 0 5px;
+        height: 1em;
+    }
+
+    .employment-panel,
+    #education,
+    #other-info {
+        border: none;
+    }
+
+    .employment-panel h2,
+    #education h2,
+    #other-info h2 {
+        border-top: 1px solid var(--very-dark-red);
+    }
+    
+        .employer-and-time {
+            border-top-style: dashed;
+            border-bottom-style: dashed;
+        }
+
+        .employment-duration {
+            display: inline;
+        }
+
+    #cio {
+        margin-top: 0;
+    }
+}
