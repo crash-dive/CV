@@ -1,16 +1,16 @@
 <svg
-xmlns="http://www.w3.org/2000/svg"
-aria-label="SVG"
-role="img"
-viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="SVG"
+    role="img"
+    viewBox="0 0 512 512"
 >
-<rect
-width="512"
-height="512"
-rx="15%"
-fill="#f90"
-/>
-<path d="M122 157h268v99H122"/>
+    <rect
+        width="512"
+        height="512"
+        rx="15%"
+        fill="#f90"
+    />
+    <path d="M122 157h268v99H122"/>
     <g 
         id="a"
         fill="#fff"
