@@ -541,12 +541,17 @@ h1 {
             display: inline;
         }
 
-    #other-info ul{
-        display: flex;
-        flex-wrap: wrap;
+    #other-info h2 {
+        border-bottom-style: dashed;
+        text-align: left;
     }
 
-        #other-info li{
-            width: 50%;
+        #other-info ul{
+            display: flex;
+            flex-wrap: wrap;
         }
+
+            #other-info li{
+                width: 50%;
+            }
 }
