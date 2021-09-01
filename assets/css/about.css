@@ -273,6 +273,16 @@ h1 {
         margin-top: 45px;
     }
 
+    #download-pdf {
+        position: absolute;
+        top: 1%;
+        left: 2%;
+    }
+    
+        #download-pdf-img {
+            height: 40px;
+        }
+
     #achievements-skills section {
         margin-top: 10px;
     }
@@ -349,6 +359,15 @@ h1 {
 }
 
 @media screen and (min-width: 1024px) {
+    #download-pdf {
+        position: absolute;
+        top: 1%;
+    }
+
+        #download-pdf-img {
+            height: 4em;
+        }
+    
     #achievements-skills {
         display: flex;
         margin-top: 10px;
@@ -428,6 +447,7 @@ h1 {
         background: white;
     }
 
+    #download-pdf,
     header {
         display: none;
     }
