@@ -1,4 +1,0 @@
-{{ $svg := resources.Get (.Get "src") | minify }}
-<a href="{{ .Get "href" }}" class="educator-logo" >
-    <img id="{{ .Get "id" }}" src="{{ $svg.RelPermalink }}" alt="{{ .Get "alt" }}" />
-</a>

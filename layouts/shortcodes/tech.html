@@ -1,8 +1,0 @@
-{{ $id := .Get "id" }}
-{{ $svg := resources.Get (print "images/techs/" $id ".svg") | minify }}
-<li>
-    <a href="{{ .Get "href" }}">
-        <img id="{{ .Get "id" }}" src="{{ $svg.RelPermalink }}" alt="{{ .Get "alt" }}" />
-        <p>{{ .Get "alt" }}</p>
-    </a>
-</li>
