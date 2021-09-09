@@ -61,7 +61,7 @@
                 <a href="/contact">Contact</a>
                 <div id="social-logos">
                     {{ define "partials/social-link" }}
-                        {{ $logo := resources.Get (print "images/socials/" .img ".svg") | minify }}
+                        {{ $logo := resources.Get (print "img/socials/" .img ".svg") | minify }}
                         <a id="{{ .img }}-link" href="{{ .url }}">
                             <img width="30" height="30" src="{{ $logo.RelPermalink }}" alt="LinkedIn logo" />
                         </a>

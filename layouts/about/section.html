@@ -4,7 +4,7 @@
 <p class="tagline">Leader, mentor &amp; communicator who builds tech empowered organisations</p>
     
 <a id="download-pdf" title="Download PDF" href="/docs/jonathon-smith-cv.pdf" download="Jonathon-Smith-CV.pdf">
-    {{ $downloadPdf := resources.Get "images/download-pdf.svg" | minify }}
+    {{ $downloadPdf := resources.Get "img/download-pdf.svg" | minify }}
     <img id="download-pdf-img" src="{{ $downloadPdf.RelPermalink }}" alt="Download PDF" />
 </a>
 
@@ -294,7 +294,7 @@
 {{ end }}
 
 {{ define "partials/tech" }}
-    {{ $techLogo := resources.Get (print "images/techs/" .id ".svg") | minify }}
+    {{ $techLogo := resources.Get (print "img/techs/" .id ".svg") | minify }}
     <li>
         <a href="{{ .href }}">
             <img id="{{ .id }}" src="{{ $techLogo.RelPermalink }}" alt="{{ .alt }}" />
@@ -304,7 +304,7 @@
 {{ end }}
 
 {{ define "partials/educator" }}
-    {{ $educatorLogo := resources.Get (print "images/educators/" .id ".svg") | minify }}
+    {{ $educatorLogo := resources.Get (print "img/educators/" .id ".svg") | minify }}
     <a href="{{ .href }}" class="educator-logo">
         <img id="{{ .id }}-logo" src="{{ $educatorLogo.RelPermalink }}" alt="{{ .name }} Logo" />
     </a>
@@ -315,7 +315,7 @@
 {{ end }}
 
 {{ define "partials/employer" }}
-    {{ $educatorLogo := resources.Get (print "images/employers/" .id ".svg") | minify }}
+    {{ $educatorLogo := resources.Get (print "img/employers/" .id ".svg") | minify }}
     <div class="employer-and-time">
         <a href="{{ .href }}" class="employer-logo" >
             <img id="{{ .id }}-logo" src="{{ $educatorLogo.RelPermalink }}" alt="{{ .name }} Logo" />
