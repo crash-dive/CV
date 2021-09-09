@@ -19,24 +19,31 @@
         <link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon32.RelPermalink }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon16.RelPermalink }}">
         <link rel="shortcut icon" type="image/x-icon" href="{{ $favicon.RelPermalink }}" />
+        
+        {{ define "partials/font" }}
+            {{ $font := resources.Get (print "fonts/" . ) }}
+            {{ $fontFingerprint := $font | fingerprint "sha512" }}
+            <link href="{{ $font.RelPermalink }}" rel="preload" as="font" type="font/ttf" integrity="{{ $fontFingerprint.Data.Integrity }}" crossorigin="anonymous">
+        {{ end }}
+        {{ partial "font" "spantaran.ttf" }}
 
-        {{ $spantaranFont := resources.Get "fonts/spantaran.ttf" }}
-        {{ $baseCss := resources.Get "css/base.css" | minify | fingerprint "sha512" }}
-        <link href="{{ $spantaranFont.RelPermalink }}" rel="preload" as="font" type="font/ttf" crossorigin="anonymous">
-        <link href="{{ $baseCss.RelPermalink }}" rel="stylesheet" integrity="{{ $baseCss.Data.Integrity }}" crossorigin="anonymous" />
-
+        {{ define "partials/css" }}
+            {{ $css := resources.Get (print "css/" . ".css") | minify | fingerprint "sha512" }}
+            <link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous" />
+        {{ end }}
+        {{ partial "css" "base" }}
         {{ range .Params.css }}
-            {{ $pageCss := resources.Get (print "css/" . ".css") | minify | fingerprint "sha512" }}
-            <link href="{{ $pageCss.RelPermalink }}" rel="stylesheet" integrity="{{ $pageCss.Data.Integrity }}" crossorigin="anonymous" />
+            {{ partial "css" . }}
         {{ end }}
 
-        {{ $navMenuJs := resources.Get "js/nav-menu.js" | minify | fingerprint "sha512" }}
-        <script src="{{ $navMenuJs.RelPermalink }}" defer integrity="{{ $navMenuJs.Data.Integrity }}"></script>
-
-        {{ if isset .Params "js" }} 
-            {{ range .Params.js }}
-                {{ $js := resources.Get (print "js/" . ".js") | minify | fingerprint "sha512" }}
-                <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+        {{ define "partials/ts" }}
+            {{ $ts := resources.Get (print "ts/" . ".ts") | js.Build | minify | fingerprint "sha512" }}
+            <script src="{{ $ts.RelPermalink }}" defer integrity="{{ $ts.Data.Integrity }}" crossorigin="anonymous"></script>
+        {{ end }}
+        {{ partial "ts" "nav-menu" }}
+        {{ if isset .Params "ts" }}
+            {{ range .Params.ts }}
+                {{ partial "ts" . }}
             {{ end }}
         {{ end }}
     </head>
@@ -49,27 +56,22 @@
             </button>
             <div id="nav-menu-frame"></div>
             <nav id="nav-menu">
-                <a href="/" {{ if .IsHome }} class="current-page" {{ end }}>Home</a>
-                <a href="/about" {{ if eq .RelPermalink "/about/" }} class="current-page" {{ end }}>About</a>
-                <a href="/contact" {{ if eq .RelPermalink "/contact/" }} class="current-page" {{ end }}>Contact</a>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
                 <div id="social-logos">
-                    {{ $github := resources.Get "images/social/github.svg" | minify }}
-                    {{ $stackOverflow := resources.Get "images/social/stack-overflow.svg" | minify }}
-                    {{ $facebook := resources.Get "images/social/facebook.svg" | minify }}
-                    {{ $linkedIn := resources.Get "images/social/linked-in.svg" | minify }}
+                    {{ define "partials/social-link" }}
+                        {{ $logo := resources.Get (print "images/socials/" .img ".svg") | minify }}
+                        <a id="{{ .img }}-link" href="{{ .url }}">
+                            <img width="30" height="30" src="{{ $logo.RelPermalink }}" alt="LinkedIn logo" />
+                        </a>
+                    {{ end }}
 
-                    <a id="linked-in-link" href="https://www.linkedin.com/in/jonathon-ronald-smith/">
-                        <img width="30" height="30" src="{{ $linkedIn.RelPermalink }}" alt="LinkedIn logo" />
-                    </a>
-                    <a id="facebook-link" href="https://www.facebook.com/jonathon.ronald.smith/">
-                        <img width="30" height="30" src="{{ $facebook.RelPermalink }}" alt="Facebook logo" />
-                    </a>
-                    <a id="github-link" href="https://github.com/crash-dive/">
-                        <img width="30" height="30" src="{{ $github.RelPermalink }}" alt="GitHub logo" />
-                    </a>
-                    <a id="stack-overflow-link"  href="https://stackoverflow.com/story/crash-dive">
-                        <img width="30" height="30" src="{{ $stackOverflow.RelPermalink }}" alt="Stack Overflow logo" />
-                    </a>
+                    {{ partial "social-link" (dict "name" "LinkedIn"       "img" "linked-in"      "url" "https://www.linkedin.com/in/jonathon-ronald-smith/")}}
+                    {{ partial "social-link" (dict "name" "Facebook"       "img" "facebook"       "url" "https://www.facebook.com/jonathon.ronald.smith/")}}
+                    {{ partial "social-link" (dict "name" "GitHub"         "img" "github"         "url" "https://github.com/crash-dive/")}}
+                    {{ partial "social-link" (dict "name" "Stack Overflow" "img" "stack-overflow" "url" "https://stackoverflow.com/story/crash-dive")}}
+
                     <p class="social-name" id="linked-in-name">LinkedIn</p>
                     <p class="social-name" id="facebook-name">Facebook</p>
                     <p class="social-name" id="github-name">Github</p>
