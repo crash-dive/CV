@@ -1,0 +1,184 @@
+<!doctype html><html lang=en-gb>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=Description content="Examples of my work.">
+<title>Crash Dive - Jonathon Smith - Portfolio</title>
+<link rel=apple-touch-icon sizes=180x180 href=/favicon-apple-touch.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link href=/fonts/spantaran.ttf rel=preload as=font type=font/ttf integrity="sha512-Jh9qi6R0KGbELgvEdaaAKIYFstTTXhy5nRiu/+8b8Big6HUr0aXeIfBO2mIkrcp4awK3bFHCc/zhtwnaXTBdNg==" crossorigin=anonymous>
+<link href=/css/base.min.fe290244b065ebed7ef4efac3e76a2c15b4c6d29596b251a81214b2fcc668a86e309d2e680939a321a1de9ad6bfb3be9f1ba7c2eeec6c435ea841552179e462e.css rel=stylesheet integrity="sha512-/ikCRLBl6+1+9O+sPnaiwVtMbSlZayUagSFLL8xmiobjCdLmgJOaMhod6a1r+zvp8bp8Lu7GxDXqhBVSF55GLg==" crossorigin=anonymous>
+<link href=/css/portfolio.min.2f618aaf570dc67e14f323469e612a66dc6fedd2b03787b37c63b35330f1adb481eed258f06974a2d0f9f54c1c29849199f8bf602be003ddd4c35ad10b191d4f.css rel=stylesheet integrity="sha512-L2GKr1cNxn4U8yNGnmEqZtxv7dKwN4ezfGOzUzDxrbSB7tJY8Gl0otD59UwcKYSRmfi/YCvgA93Uw1rRCxkdTw==" crossorigin=anonymous>
+<script src=/ts/nav-menu.min.ebf1ecc5acd44cff23cbee9e4182c76e7e6c0516c6be42293081987f38073078748afd7f4f76ad7beb9ffee309d940426a5ff90cd0c21f2cd44e2b6b9c5a383a.js defer integrity="sha512-6/HsxazUTP8jy+6eQYLHbn5sBRbGvkIpMIGYfzgHMHh0iv1/T3ate+uf/uMJ2UBCal/5DNDCHyzUTitrnFo4Og==" crossorigin=anonymous></script>
+</head>
+<body>
+<header>
+<button id=nav-button class=is-closed type=button aria-label="Opens navigation menu">
+<div class=nav-button-line id=nav-button-line-top></div>
+<div class=nav-button-line id=nav-button-line-mid></div>
+<div class=nav-button-line id=nav-button-line-bot></div>
+</button>
+<div id=nav-menu-frame></div>
+<nav id=nav-menu>
+<a href=/>Home</a>
+<a href=/about>About</a>
+<a href=/portfolio>Portfolio</a>
+<a href=/contact>Contact</a>
+<div id=social-logos>
+<a id=linked-in-link href=https://www.linkedin.com/in/jonathon-ronald-smith/>
+<img width=30 height=30 src=/img/icons/socials/linked-in.min.svg alt="LinkedIn logo">
+</a>
+<a id=facebook-link href=https://www.facebook.com/jonathon.ronald.smith/>
+<img width=30 height=30 src=/img/icons/socials/facebook.min.svg alt="LinkedIn logo">
+</a>
+<a id=github-link href=https://github.com/crash-dive/>
+<img width=30 height=30 src=/img/icons/socials/github.min.svg alt="LinkedIn logo">
+</a>
+<a id=stack-overflow-link href=https://stackoverflow.com/story/crash-dive>
+<img width=30 height=30 src=/img/icons/socials/stack-overflow.min.svg alt="LinkedIn logo">
+</a>
+<p class=social-name id=linked-in-name>LinkedIn</p>
+<p class=social-name id=facebook-name>Facebook</p>
+<p class=social-name id=github-name>Github</p>
+<p class=social-name id=stack-overflow-name>Stack Overflow</p>
+</div>
+</nav>
+</header>
+<main>
+<h1>Portfolio</h1>
+<p id=page-description>Examples of web development work that I have done</p>
+<section class="panel portfolio">
+<h2>Card Game Database</h2>
+<div class=content>
+<img class=main-img src=/img/portfolio/trading-cards-1.jpg alt="Picture of Card Game Database">
+<div class=links-and-description>
+<details open>
+<summary>
+<h3>Requirements</h3>
+</summary>
+<p class=requirements>Provide a database of the trading card games I collect that allows the user to search different games, then see what cards I need and what I have available to trade.</p>
+</details>
+<details open>
+<summary>
+<h3>Technology</h3>
+</summary>
+<p class=description>The site was built using Hugo and uses Google Sheets as a backend. This is done by publishing the sheets as CSVs and then pulling them down in JavaScript to render them on the page in HTML. It makes extensive use of the tabulator and papaparse libraries to do this.</p>
+<p class=description>This architecture allowed me to keep using Google Sheets to track my collections and use a static site hosting option to reduce costs but still provide an interactive backend.</p>
+<p class=description>I often link to pages on the site when talking on Facebook and wanted the site to have full Open Graph support. However Open Graph requires a raster image of the page to show when rendering the preview, the large number of games made creating this image manually very time consuming.</p>
+<p class=description>To address this I created a part of the build step that generates these images from a HTML page when a new game is added. It does this by running an NPM task using the headless chrome puppeteer tool to render the page and extracting the images from that page.</p>
+</details>
+<div class=links>
+<div class=deployed>
+<img width=20 height=20 src=/img/icons/others/web.min.svg alt="Weblink icon">
+<a href=https://cards.crashdive.co.uk>cards.crashdive.co.uk</a>
+</div>
+<div class=source>
+<img width=20 height=20 src=/img/icons/socials/github.min.svg alt="Github logo">
+<a href=https://github.com/crash-dive/Cards>github.com/crash-dive/Cards</a>
+</div>
+</div>
+</div>
+</section>
+<section class="panel portfolio">
+<h2>About Me Website</h2>
+<div class=content>
+<img class=main-img src=/img/portfolio/about-me-1.jpg alt="Picture of About Me Website">
+<div class=links-and-description>
+<details open>
+<summary>
+<h3>Requirements</h3>
+</summary>
+<p class=requirements>Describe who I am and act as my CV.</p>
+</details>
+<details open>
+<summary>
+<h3>Technology</h3>
+</summary>
+<p class=description>The site was built using Hugo and makes extensive use of SVG images.</p>
+<p class=description>The layout uses a wide range of complex and modern CSS techniques including flexbox, grid and animations.</p>
+<p class=description>Furthermore the site is fully responsive allowing the user to view it on desktop or mobile. As well as providing print stylings designed to create an A4 CV when printed.</p>
+<p class=description>Graphically the site uses a large number of SVGs that are used to provide colour to the pages. These were all hand edited and optimised for web use.</p>
+<p class=description>It is deployed using a basic DevOps pipeline based on Github actions. On commit this builds all assets using Hugo and publishes it as a GitHub page.</p>
+</details>
+<div class=links>
+<div class=deployed>
+<img width=20 height=20 src=/img/icons/others/web.min.svg alt="Weblink icon">
+<a href=https://www.crashdive.co.uk>www.crashdive.co.uk</a>
+</div>
+<div class=source>
+<img width=20 height=20 src=/img/icons/socials/github.min.svg alt="Github logo">
+<a href=https://github.com/crash-dive/CrashDive>github.com/crash-dive/CrashDive</a>
+</div>
+</div>
+</div>
+</section>
+<section class="panel portfolio">
+<h2>Fleet Assist Website</h2>
+<div class=content>
+<img class=main-img src=/img/portfolio/fleet-assist-website-1.jpg alt="Picture of Fleet Assist Website">
+<div class=links-and-description>
+<details open>
+<summary>
+<h3>Requirements</h3>
+</summary>
+<p class=requirements>Provide a landing page for the business that describes what it does and links into its other web applications.</p>
+</details>
+<details open>
+<summary>
+<h3>Technology</h3>
+</summary>
+<p class=description>The site was originally built using ASP.NET MVC Core, however we decided to move all the static pages to Hugo and place them on an external CDN to improve first paint speed.</p>
+<p class=description>Join Network remained on .NET because that page triggered various actions within the company's broader systems which were .NET based.</p>
+<p class=description>The design was based on a design language adopted by the business in 2017. Therefore the overall design was done by me and the lead I led, while some of the icons and colour scheme were from an external design house.</p>
+<p class=description>It also provides a very basic example of geographic map work using MapBox on the contact page. This is an area I have extensive experience in, but have no public examples of the more complex work.</p>
+<p class=description>This website is no longer maintained by me, therefore if you visit the live site there may be changes from the pictures above.</p>
+</details>
+<div class=links>
+<div class=deployed>
+<img width=20 height=20 src=/img/icons/others/web.min.svg alt="Weblink icon">
+<a href=https://www.fleetassist.co.uk>www.fleetassist.co.uk</a>
+</div>
+<div class=source>
+<img width=20 height=20 src=/img/icons/socials/github.min.svg alt="Github logo">
+<span>Source Code Private</span>
+</div>
+</div>
+</div>
+</section>
+<section class="panel portfolio">
+<h2>FleetNet Website</h2>
+<div class=content>
+<img class=main-img src=/img/portfolio/fleet-net-1.jpg alt="Picture of FleetNet Website">
+<div class=links-and-description>
+<details open>
+<summary>
+<h3>Requirements</h3>
+</summary>
+<p class=requirements>Describe what FleetNet is as well as allow new members to join and find out about their events.</p>
+</details>
+<details open>
+<summary>
+<h3>Technology</h3>
+</summary>
+<p class=description>The site was built using ASP.NET Razor Pages, this was partly because I wanted to try the technology and because FleetNet currently uses ASP.NET for other elements of its activities.</p>
+<p class=description>It is not currently live because one of FleetNet's primary activities was running an in person conference which has been on hold since the COVID-19 pandemic. However it should be launched sometime in the future when those conferences start up again.</p>
+<p class=description>While not technically complex this project required a large amount of conversion work from old data sources to populate it with content. This was held by a range of people and in a number of formats, I needed to collate all these and convert it for use on the new website.</p>
+<p class=description>The development version of the site is hosted on Azure, with the option of moving that to an internal IIS server if the customer requires it.</p>
+</details>
+<div class=links>
+<div class=deployed>
+<img width=20 height=20 src=/img/icons/others/web.min.svg alt="Weblink icon">
+<span>Not Currently Live</span>
+</div>
+<div class=source>
+<img width=20 height=20 src=/img/icons/socials/github.min.svg alt="Github logo">
+<span>Source Code Private</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body>
+</html>
