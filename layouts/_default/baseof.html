@@ -58,19 +58,20 @@
             <nav id="nav-menu">
                 <a href="/">Home</a>
                 <a href="/about">About</a>
+                <a href="/portfolio">Portfolio</a>
                 <a href="/contact">Contact</a>
                 <div id="social-logos">
                     {{ define "partials/social-link" }}
-                        {{ $logo := resources.Get (print "img/socials/" .img ".svg") | minify }}
+                        {{ $logo := resources.Get (print "img/icons/socials/" .img ".svg") | minify }}
                         <a id="{{ .img }}-link" href="{{ .url }}">
                             <img width="30" height="30" src="{{ $logo.RelPermalink }}" alt="LinkedIn logo" />
                         </a>
                     {{ end }}
 
-                    {{ partial "social-link" (dict "name" "LinkedIn"       "img" "linked-in"      "url" "https://www.linkedin.com/in/jonathon-ronald-smith/")}}
-                    {{ partial "social-link" (dict "name" "Facebook"       "img" "facebook"       "url" "https://www.facebook.com/jonathon.ronald.smith/")}}
-                    {{ partial "social-link" (dict "name" "GitHub"         "img" "github"         "url" "https://github.com/crash-dive/")}}
-                    {{ partial "social-link" (dict "name" "Stack Overflow" "img" "stack-overflow" "url" "https://stackoverflow.com/story/crash-dive")}}
+                    {{ partial "social-link" (dict "name" "LinkedIn"       "img" "linked-in"      "url" "https://www.linkedin.com/in/jonathon-ronald-smith/") }}
+                    {{ partial "social-link" (dict "name" "Facebook"       "img" "facebook"       "url" "https://www.facebook.com/jonathon.ronald.smith/") }}
+                    {{ partial "social-link" (dict "name" "GitHub"         "img" "github"         "url" "https://github.com/crash-dive/") }}
+                    {{ partial "social-link" (dict "name" "Stack Overflow" "img" "stack-overflow" "url" "https://stackoverflow.com/story/crash-dive") }}
 
                     <p class="social-name" id="linked-in-name">LinkedIn</p>
                     <p class="social-name" id="facebook-name">Facebook</p>

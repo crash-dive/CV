@@ -4,7 +4,7 @@
 <p class="tagline">Leader, mentor &amp; communicator who builds tech empowered organisations</p>
     
 <a id="download-pdf" title="Download PDF" href="/docs/jonathon-smith-cv.pdf" download="Jonathon-Smith-CV.pdf">
-    {{ $downloadPdf := resources.Get "img/download-pdf.svg" | minify }}
+    {{ $downloadPdf := resources.Get "img/icons/others/download-pdf.svg" | minify }}
     <img id="download-pdf-img" src="{{ $downloadPdf.RelPermalink }}" alt="Download PDF" />
 </a>
 
@@ -294,7 +294,7 @@
 {{ end }}
 
 {{ define "partials/tech" }}
-    {{ $techLogo := resources.Get (print "img/techs/" .id ".svg") | minify }}
+    {{ $techLogo := resources.Get (print "img/icons/techs/" .id ".svg") | minify }}
     <li>
         <a href="{{ .href }}">
             <img id="{{ .id }}" src="{{ $techLogo.RelPermalink }}" alt="{{ .alt }}" />

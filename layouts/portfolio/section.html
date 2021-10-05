@@ -1,0 +1,125 @@
+{{ define "main" }}
+
+<h1>Portfolio</h1>
+<p id="page-description">Examples of web development work that I have done</p>
+
+{{ partial "portfolio" (dict
+    "title" "Card Game Database"
+    "imgs" (slice 
+        "trading-cards-1"
+        "trading-cards-2"
+        "trading-cards-3"
+    )
+    "url" "cards.crashdive.co.uk"
+    "github" "github.com/crash-dive/Cards"
+    "requirements" "Provide a database of the trading card games I collect that allows the user to search different games, then see what cards I need and what I have available to trade."
+    "description" (slice 
+        "The site was built using Hugo and uses Google Sheets as a backend. This is done by publishing the sheets as CSVs and then pulling them down in JavaScript to render them on the page in HTML. It makes extensive use of the tabulator and papaparse libraries to do this."
+        "This architecture allowed me to keep using Google Sheets to track my collections and use a static site hosting option to reduce costs but still provide an interactive backend."
+        "I often link to pages on the site when talking on Facebook and wanted the site to have full Open Graph support. However Open Graph requires a raster image of the page to show when rendering the preview, the large number of games made creating this image manually very time consuming."
+        "To address this I created a part of the build step that generates these images from a HTML page when a new game is added. It does this by running an NPM task using the headless chrome puppeteer tool to render the page and extracting the images from that page."
+    )
+)}}
+
+{{ partial "portfolio" (dict
+    "title" "About Me Website"
+    "imgs" (slice 
+        "about-me-1"
+        "about-me-2"
+        "about-me-3"
+    )
+    "url" "www.crashdive.co.uk"
+    "github" "github.com/crash-dive/CrashDive"
+    "requirements" "Describe who I am and act as my CV."
+    "description" (slice 
+        "The site was built using Hugo and makes extensive use of SVG images."
+        "The layout uses a wide range of complex and modern CSS techniques including flexbox, grid and animations."
+        "Furthermore the site is fully responsive allowing the user to view it on desktop or mobile. As well as providing print stylings designed to create an A4 CV when printed."
+        "Graphically the site uses a large number of SVGs that are used to provide colour to the pages. These were all hand edited and optimised for web use."
+        "It is deployed using a basic DevOps pipeline based on Github actions. On commit this builds all assets using Hugo and publishes it as a GitHub page."
+    )
+)}}
+
+{{ partial "portfolio" (dict
+    "title" "Fleet Assist Website"
+    "imgs" (slice 
+        "fleet-assist-website-1"
+        "fleet-assist-website-2"
+        "fleet-assist-website-3"
+    )
+    "url" "www.fleetassist.co.uk"
+    "requirements" "Provide a landing page for the business that describes what it does and links into its other web applications."
+    "description" (slice 
+        "The site was originally built using ASP.NET MVC Core, however we decided to move all the static pages to Hugo and place them on an external CDN to improve first paint speed."
+        "Join Network remained on .NET because that page triggered various actions within the company's broader systems which were .NET based."
+        "The design was based on a design language adopted by the business in 2017. Therefore the overall design was done by me and the lead I led, while some of the icons and colour scheme were from an external design house."
+        "It also provides a very basic example of geographic map work using MapBox on the contact page. This is an area I have extensive experience in, but have no public examples of the more complex work."
+        "This website is no longer maintained by me, therefore if you visit the live site there may be changes from the pictures above."
+    )
+)}}
+
+{{ partial "portfolio" (dict
+    "title" "FleetNet Website"
+    "imgs" (slice 
+        "fleet-net-1"
+        "fleet-net-2"
+        "fleet-net-3"
+    )
+    "requirements" "Describe what FleetNet is as well as allow new members to join and find out about their events."
+    "description" (slice 
+        "The site was built using ASP.NET Razor Pages, this was partly because I wanted to try the technology and because FleetNet currently uses ASP.NET for other elements of its activities."
+        "It is not currently live because one of FleetNet's primary activities was running an in person conference which has been on hold since the COVID-19 pandemic. However it should be launched sometime in the future when those conferences start up again."
+        "While not technically complex this project required a large amount of conversion work from old data sources to populate it with content. This was held by a range of people and in a number of formats, I needed to collate all these and convert it for use on the new website."
+        "The development version of the site is hosted on Azure, with the option of moving that to an internal IIS server if the customer requires it."
+    )
+)}}
+
+{{ end }}
+
+{{ define "partials/portfolio" }}
+    <section class="panel portfolio">
+        <h2>{{ .title }}</h2>
+        <div class="content">
+            {{ $mainImg := resources.Get (print "img/portfolio/" (index (.imgs) 0) ".jpg") }}
+            <img class="main-img" src="{{ $mainImg.RelPermalink }}" alt="Picture of {{ .title }}" />
+            <div class="links-and-description">
+                <details open>
+                    <summary>
+                        <h3>Requirements</h3>
+                    </summary>
+                    <p class="requirements">{{ .requirements }}</p>
+                </details>
+
+                <details open>
+                    <summary>
+                        <h3>Technology</h3>
+                    </summary>
+                    {{ range .description }}
+                        <p class="description">{{ . }}</p>
+                    {{ end }}
+                </details>
+                
+                <div class="links">
+                    <div class="deployed">
+                        {{ $logo := resources.Get "img/icons/others/web.svg" | minify }}
+                        <img width="20" height="20" src="{{ $logo.RelPermalink }}" alt="Weblink icon" />
+                        {{ if isset . "url" }}
+                            <a href="https://{{ .url }}">{{ .url }}</a>
+                        {{ else }}
+                            <span>Not Currently Live</span>
+                        {{ end }}
+                    </div>
+                    <div class="source">
+                        {{ $logo := resources.Get "img/icons/socials/github.svg" | minify }}
+                        <img width="20" height="20" src="{{ $logo.RelPermalink }}" alt="Github logo" />
+                        {{ if isset . "github" }}
+                            <a href="https://{{ .github }}">{{ .github }}</a>
+                        {{ else }}
+                            <span>Source Code Private</span>
+                        {{ end }}
+                    </div>
+                </div>
+
+            </div>
+    </section>
+{{ end }}
