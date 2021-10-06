@@ -23,7 +23,7 @@ h1 {
 }
 
 .portfolio {
-    background: #ddd;
+    background: var(--background-gray);
     color: black;
     font-family: var(--arial);
     border: 1px solid var(--very-dark-red);
@@ -43,89 +43,147 @@ h1 {
         display: flex;
     }
 
-        .portfolio .screenshots,
-        .portfolio .indexes {
-            padding: 0;
-            margin: 0;
-            list-style: none;
+        .carousel {
+            position: relative;
         }
-
-            .portfolio .screenshots {
-                position: relative;
+            .carousel .close-fullscreen,
+            .carousel .screenshot-left,
+            .carousel .screenshot-right {
+                display: none;
             }
-            
-                .portfolio .screenshots li {
-                    opacity: 0;
-                    transition: opacity 0.5s ease-out;
-                    position: absolute;
-                    top: 0;
-                }
 
-                .portfolio .screenshots li.active-screenshot {
-                    opacity: 1;
-                    transition: opacity 0.5s ease-out;
+            .carousel .screenshots,
+            .carousel .indexes {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+
+                .carousel .screenshots {
                     position: relative;
                 }
-
-                    .portfolio .screenshots li img {
-                        border-radius: 5px;
-                        border: 1px solid var(--very-dark-red);
+                
+                    .carousel .screenshots li {
+                        opacity: 0;
+                        transition: opacity 0.5s ease-out;
+                        position: absolute;
+                        top: 0;
                     }
 
-            .portfolio .indexes {
-                display: flex;
-                justify-content: center;
+                    .carousel .screenshots li.active-screenshot {
+                        opacity: 1;
+                        transition: opacity 0.5s ease-out;
+                        position: relative;
+                    }
+
+                        .carousel .screenshots li img {
+                            border-radius: 5px;
+                            cursor: pointer;
+                            
+                            /* This is needed keep the boarder when using object-fit */
+                            filter:
+                                drop-shadow(0 -1px 0 var(--very-dark-red))
+                                drop-shadow(0 1px 0 var(--very-dark-red))
+                                drop-shadow(-1px 0 0 var(--very-dark-red))
+                                drop-shadow(1px 0 0 var(--very-dark-red));
+                        }
+
+                .carousel .indexes {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                    .carousel .indexes button {
+                        padding: 0 10px;
+                        cursor: pointer;
+                        background: none;
+                        border: none;
+                    }
+
+                        .carousel .indexes button:hover {
+                            color: var(--dark-red);
+                            transform: scale(1.3);
+                        }
+
+                    .carousel .indexes li.active-index button {
+                        color: var(--dark-red);
+                    }
+        
+        .carousel.fullscreen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--background-gray);
+        }
+
+        .carousel.fullscreen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--background-gray);
+        }
+
+            .carousel.fullscreen .close-fullscreen {
+                display: block;
+                background: none;
+                border: none;
+                position: absolute;
+                font-size: 3em;
+                cursor: pointer;
+                z-index: 60;
+                top: 1%;
+                right: 1%;
             }
 
-                .portfolio .indexes button {
-                    padding: 0 10px;
-                    cursor: pointer;
-                    background: none;
-                    border: none;
-                }
+            .carousel.fullscreen .close-fullscreen:hover {
+                color: var(--dark-red);
+            }
 
-                    .portfolio .indexes button:hover {
-                        color: var(--dark-red);
-                        transform: scale(1.3);
-                    }
-
-                .portfolio .indexes li.active-index button {
-                    color: var(--dark-red);
-                }
-
-        .portfolio .links-and-description summary {
+        .links-and-description summary {
             cursor: pointer;
         }
 
-            .portfolio .links-and-description summary:hover {
+            .links-and-description summary:hover {
                 text-decoration: underline;
             }
 
-        .portfolio h3 {
+        .links-and-description h3 {
             margin: 0;
             display: inline;
         }
     
-        .portfolio .requirements,
-        .portfolio .description {
+        .links-and-description .requirements,
+        .links-and-description .description {
             margin: 0 0 10px 0;
         }
 
-        .portfolio .links img {
+        .links-and-description .links img {
             margin-right: 4px;
         }
 
-        .portfolio .links .deployed,
-        .portfolio .links .source {
+        .links-and-description .links .deployed,
+        .links-and-description .links .source {
             display: flex;
             margin-bottom: 5px;
         }
 
-        .portfolio .links a {
+        .links-and-description .links a {
             color: black;
         }
 
-            .portfolio .links a:hover {
+            .links-and-description .links a:hover {
                 text-decoration: underline;
             }
 
@@ -142,15 +200,15 @@ h1 {
         flex-direction: column;
     }
 
-    .portfolio .screenshots li img {
+    .carousel .screenshots li img {
         width: 100%;
     }
 
-    .portfolio .indexes {
+    .links-and-description .indexes {
         margin-bottom: 5px;
     }
 
-    .portfolio .links {
+    .links-and-description .links {
         margin-left: 5px;
     }
 }
@@ -160,38 +218,26 @@ h1 {
         justify-content: space-between;
     }
 
-    .portfolio .carousel {
+    .carousel {
         width: 50%;
     }
 
-        .portfolio .screenshots li img {
+        .carousel .screenshots li img {
             width: 100%;
             max-height: 700px;
             align-self: flex-start;
             object-fit: contain;
         }
 
-    .portfolio .links-and-description {
+    .links-and-description {
         display: flex;
         flex-direction: column;
         width: 49%;
     }
 
-        .portfolio .links {
+        .links-and-description .links {
             display: flex;
             justify-content: space-evenly;
             margin-top: auto;
         }
-}
-
-/* On really large monitors you need this to make sure the borders stay around the object as it resizes */
-@media screen and (min-width: 2650px) {
-    .portfolio .screenshots li img {
-        border: none;
-        filter:
-            drop-shadow(0 -1px 0 var(--very-dark-red))
-            drop-shadow(0 1px 0 var(--very-dark-red))
-            drop-shadow(-1px 0 0 var(--very-dark-red))
-            drop-shadow(1px 0 0 var(--very-dark-red));
-    }
 }

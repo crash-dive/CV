@@ -12,7 +12,7 @@ main p, main ul {
 }
 
 .panel {
-    background: #ddd;
+    background: var(--background-gray);
     color: black;
     font-family: var(--arial);
     border: 1px solid var(--very-dark-red);

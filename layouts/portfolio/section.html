@@ -100,6 +100,7 @@
         <h2>{{ .title }}</h2>
         <div class="content">
             <div class="carousel">
+                <button class="close-fullscreen" type="button">X</button>
                 <ol class="screenshots">
                     {{ range $index, $element := .imgs }}
                         <li id="{{ . }}" {{ if eq $index 0 }} class="active-screenshot" {{ end }}>
