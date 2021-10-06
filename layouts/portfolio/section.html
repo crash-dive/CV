@@ -1,14 +1,14 @@
 {{ define "main" }}
 
 <h1>Portfolio</h1>
-<p id="page-description">Examples of web development work that I have done</p>
+<p id="page-description">A selection of example web development work that I have built</p>
 
 {{ partial "portfolio" (dict
     "title" "Card Game Database"
     "imgs" (slice 
-        "trading-cards-1"
-        "trading-cards-2"
-        "trading-cards-3"
+        "card-game-database-1"
+        "card-game-database-2"
+        "card-game-database-3"
     )
     "url" "cards.crashdive.co.uk"
     "github" "github.com/crash-dive/Cards"
@@ -22,30 +22,29 @@
 )}}
 
 {{ partial "portfolio" (dict
-    "title" "About Me Website"
+    "title" "Atlas"
     "imgs" (slice 
-        "about-me-1"
-        "about-me-2"
-        "about-me-3"
+        "atlas-1"
+        "atlas-2"
     )
-    "url" "www.crashdive.co.uk"
-    "github" "github.com/crash-dive/CrashDive"
-    "requirements" "Describe who I am and act as my CV."
+    "url" "atlas.fleetassist.co.uk"
+    "requirements" "Act as the opperating system for the entire Fleet Assist business, taking in areas as disperate as running a call centre, managing the data on thousands of garages, organising finance activities and performing analytics on over £2bn in vehicle repair data."
     "description" (slice 
-        "The site was built using Hugo and makes extensive use of SVG images."
-        "The layout uses a wide range of complex and modern CSS techniques including flexbox, grid and animations."
-        "Furthermore the site is fully responsive allowing the user to view it on desktop or mobile. As well as providing print stylings designed to create an A4 CV when printed."
-        "Graphically the site uses a large number of SVGs that are used to provide colour to the pages. These were all hand edited and optimised for web use."
-        "It is deployed using a basic DevOps pipeline based on Github actions. On commit this builds all assets using Hugo and publishes it as a GitHub page."
+        "Atlas was the main project I worked on during my 10 years at Fleet Assist. I designed and built the entire system from a greenfield project right through to it running all areas of the company's operations."
+        "As a predominantly private system I am unfortunately only able to share publicly available screenshots from the system in this portfolio."
+        "Starting development in 2012 the system was built using C# .NET. I always ensured the system was updated to reflect the state of the art within the .NET ecosystem and as .NET Core was developed we migrated onto that as it was released in 2016 and then subsequently onto .NET 5 in 2020."
+        "Built on a Microsoft stack we followed a domain focused CQRS architecture using technologies such as Entity Framework, LESS, TypeScript, ADO.NET, SQL Server, Razor and Autofac. We further intergrated with a wide range of well known external services such as MapBox, Mailgun, TextLocal, Avaya PABX and internal customer systems."
+        "The application was very data and process centric. To manage the company's processes I built a custom task system that could be configured in real time using a diagram of the process. Then to manage the large amounts of data we built a database of garages and vehicle data which won multiple industry accolades."
+        "Working as a solo developer for the first few years I became a true full stack developer able to work on any area of the system and continued to develop the system right until the end of my time at Fleet Assist."
     )
 )}}
 
 {{ partial "portfolio" (dict
-    "title" "Fleet Assist Website"
+    "title" "Fleet Assist"
     "imgs" (slice 
-        "fleet-assist-website-1"
-        "fleet-assist-website-2"
-        "fleet-assist-website-3"
+        "fleet-assist-1"
+        "fleet-assist-2"
+        "fleet-assist-3"
     )
     "url" "www.fleetassist.co.uk"
     "requirements" "Provide a landing page for the business that describes what it does and links into its other web applications."
@@ -59,11 +58,12 @@
 )}}
 
 {{ partial "portfolio" (dict
-    "title" "FleetNet Website"
+    "title" "FleetNet"
     "imgs" (slice 
         "fleet-net-1"
         "fleet-net-2"
         "fleet-net-3"
+        "fleet-net-4"
     )
     "requirements" "Describe what FleetNet is as well as allow new members to join and find out about their events."
     "description" (slice 
@@ -74,14 +74,49 @@
     )
 )}}
 
+{{ partial "portfolio" (dict
+    "title" "CV"
+    "imgs" (slice 
+        "cv-1"
+        "cv-2"
+        "cv-3"
+    )
+    "url" "www.crashdive.co.uk"
+    "github" "github.com/crash-dive/CrashDive"
+    "requirements" "Describe who I am and act as my CV."
+    "description" (slice 
+        "The site was built using Hugo and makes extensive use of SVG images."
+        "The layout uses a wide range of complex and modern CSS techniques including flexbox, grid and animations. This can be best seen on this page in the image carousel built using TypeScript and CSS."
+        "Furthermore the site is fully responsive allowing the user to view it on desktop or mobile. As well as providing print stylings designed to create an A4 CV when printed."
+        "Graphically the site uses a large number of SVGs that are used to provide colour to the pages. These were all hand edited and optimised for web use."
+        "It is deployed using a basic DevOps pipeline based on Github actions. On commit this builds all assets using Hugo and publishes it as a GitHub page."
+    )
+)}}
+
 {{ end }}
 
 {{ define "partials/portfolio" }}
     <section class="panel portfolio">
         <h2>{{ .title }}</h2>
         <div class="content">
-            {{ $mainImg := resources.Get (print "img/portfolio/" (index (.imgs) 0) ".jpg") }}
-            <img class="main-img" src="{{ $mainImg.RelPermalink }}" alt="Picture of {{ .title }}" />
+            <div class="carousel">
+                <ol class="screenshots">
+                    {{ range $index, $element := .imgs }}
+                        <li id="{{ . }}" {{ if eq $index 0 }} class="active-screenshot" {{ end }}>
+                            {{ $img := resources.Get (print "img/portfolio/" . ".png") }}
+                            {{ $img := $img.Resize "x700" }}
+                            <img src="{{ $img.RelPermalink }}" alt="Picture of portfolio website" />
+                        </li>
+                    {{ end }}
+                </ol>
+                <ol class="indexes">
+                    {{ range $index, $element := .imgs }}
+                    <li data-screenshot="{{ . }}" {{ if eq $index 0 }} class="active-index" {{ end }}>
+                        <button type="button">⬤</button>
+                    </li>
+                    {{ end }}
+                </ol>
+            </div>
             <div class="links-and-description">
                 <details open>
                     <summary>
@@ -119,7 +154,6 @@
                         {{ end }}
                     </div>
                 </div>
-
             </div>
     </section>
 {{ end }}

@@ -32,7 +32,7 @@ h1 {
     padding: 0 10px 10px;
 }
 
-    .portfolio h2{
+    .portfolio h2 {
         font-family: var(--arial-black);
         color: var(--dark-red);
         border-bottom: 1px solid var(--very-dark-red);
@@ -43,39 +43,91 @@ h1 {
         display: flex;
     }
 
-        .portfolio .main-img {
-            border-radius: 5px;
-            border: 1px solid var(--very-dark-red);
+        .portfolio .screenshots,
+        .portfolio .indexes {
+            padding: 0;
+            margin: 0;
+            list-style: none;
         }
 
-            .portfolio a {
-                color: black;
+            .portfolio .screenshots {
+                position: relative;
             }
-
-                .portfolio a:hover {
-                    text-decoration: underline;
+            
+                .portfolio .screenshots li {
+                    opacity: 0;
+                    transition: opacity 0.5s ease-out;
+                    position: absolute;
+                    top: 0;
                 }
 
-        .portfolio .deployed,
-        .portfolio .source {
-            display: flex;
-            margin-bottom: 5px;
+                .portfolio .screenshots li.active-screenshot {
+                    opacity: 1;
+                    transition: opacity 0.5s ease-out;
+                    position: relative;
+                }
+
+                    .portfolio .screenshots li img {
+                        border-radius: 5px;
+                        border: 1px solid var(--very-dark-red);
+                    }
+
+            .portfolio .indexes {
+                display: flex;
+                justify-content: center;
+            }
+
+                .portfolio .indexes button {
+                    padding: 0 10px;
+                    cursor: pointer;
+                    background: none;
+                    border: none;
+                }
+
+                    .portfolio .indexes button:hover {
+                        color: var(--dark-red);
+                        transform: scale(1.3);
+                    }
+
+                .portfolio .indexes li.active-index button {
+                    color: var(--dark-red);
+                }
+
+        .portfolio .links-and-description summary {
+            cursor: pointer;
         }
 
-        .portfolio .deployed img,
-        .portfolio .source img {
-            margin-right: 4px;
-        }
-                        
+            .portfolio .links-and-description summary:hover {
+                text-decoration: underline;
+            }
+
         .portfolio h3 {
             margin: 0;
             display: inline;
         }
-
+    
         .portfolio .requirements,
         .portfolio .description {
             margin: 0 0 10px 0;
         }
+
+        .portfolio .links img {
+            margin-right: 4px;
+        }
+
+        .portfolio .links .deployed,
+        .portfolio .links .source {
+            display: flex;
+            margin-bottom: 5px;
+        }
+
+        .portfolio .links a {
+            color: black;
+        }
+
+            .portfolio .links a:hover {
+                text-decoration: underline;
+            }
 
 @media screen and (max-width: 1023px) {
     h1 {
@@ -90,8 +142,11 @@ h1 {
         flex-direction: column;
     }
 
-    .portfolio .main-img {
+    .portfolio .screenshots li img {
         width: 100%;
+    }
+
+    .portfolio .indexes {
         margin-bottom: 5px;
     }
 
@@ -104,13 +159,17 @@ h1 {
     .portfolio .content {
         justify-content: space-between;
     }
-    
-    .portfolio .main-img {
+
+    .portfolio .carousel {
         width: 50%;
-        max-height: 700px;
-        align-self: flex-start;
-        object-fit: contain;
     }
+
+        .portfolio .screenshots li img {
+            width: 100%;
+            max-height: 700px;
+            align-self: flex-start;
+            object-fit: contain;
+        }
 
     .portfolio .links-and-description {
         display: flex;
@@ -118,16 +177,16 @@ h1 {
         width: 49%;
     }
 
-    .portfolio .links {
-        display: flex;
-        justify-content: space-evenly;
-        margin-top: auto;
-    }
+        .portfolio .links {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: auto;
+        }
 }
 
 /* On really large monitors you need this to make sure the borders stay around the object as it resizes */
 @media screen and (min-width: 2650px) {
-    .portfolio .main-img {
+    .portfolio .screenshots li img {
         border: none;
         filter:
             drop-shadow(0 -1px 0 var(--very-dark-red))
