@@ -10,8 +10,9 @@
 <link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link href=/fonts/spantaran.ttf rel=preload as=font type=font/ttf integrity="sha512-Jh9qi6R0KGbELgvEdaaAKIYFstTTXhy5nRiu/+8b8Big6HUr0aXeIfBO2mIkrcp4awK3bFHCc/zhtwnaXTBdNg==" crossorigin=anonymous>
 <link href=/css/base.min.fe290244b065ebed7ef4efac3e76a2c15b4c6d29596b251a81214b2fcc668a86e309d2e680939a321a1de9ad6bfb3be9f1ba7c2eeec6c435ea841552179e462e.css rel=stylesheet integrity="sha512-/ikCRLBl6+1+9O+sPnaiwVtMbSlZayUagSFLL8xmiobjCdLmgJOaMhod6a1r+zvp8bp8Lu7GxDXqhBVSF55GLg==" crossorigin=anonymous>
-<link href=/css/portfolio.min.2f618aaf570dc67e14f323469e612a66dc6fedd2b03787b37c63b35330f1adb481eed258f06974a2d0f9f54c1c29849199f8bf602be003ddd4c35ad10b191d4f.css rel=stylesheet integrity="sha512-L2GKr1cNxn4U8yNGnmEqZtxv7dKwN4ezfGOzUzDxrbSB7tJY8Gl0otD59UwcKYSRmfi/YCvgA93Uw1rRCxkdTw==" crossorigin=anonymous>
+<link href=/css/portfolio.min.87cc24c1e79bdcbf098d5027774cc1bd98a1e1888367092885b46e59120615d857511a3450fe7840396efc6f848eaf02bd181339c5b7380b48c250c62e55e23f.css rel=stylesheet integrity="sha512-h8wkweeb3L8JjVAnd0zBvZih4YiDZwkohbRuWRIGFdhXURo0UP54QDlu/G+Ejq8CvRgTOcW3OAtIwlDGLlXiPw==" crossorigin=anonymous>
 <script src=/ts/nav-menu.min.ebf1ecc5acd44cff23cbee9e4182c76e7e6c0516c6be42293081987f38073078748afd7f4f76ad7beb9ffee309d940426a5ff90cd0c21f2cd44e2b6b9c5a383a.js defer integrity="sha512-6/HsxazUTP8jy+6eQYLHbn5sBRbGvkIpMIGYfzgHMHh0iv1/T3ate+uf/uMJ2UBCal/5DNDCHyzUTitrnFo4Og==" crossorigin=anonymous></script>
+<script src=/ts/portfolio.min.16cb0d7d717c5433f2716b1ed38fca46f1bac7c57b18bd7d9bc90e0eb6a4c559d7d32bb40ca7e0b801bf0ac39fb86341947de53e2d80b394ad71014e10f46612.js defer integrity="sha512-FssNfXF8VDPycWse04/KRvG6x8V7GL19m8kODrakxVnX0yu0DKfguAG/CsOfuGNBlH3lPi2As5StcQFOEPRmEg==" crossorigin=anonymous></script>
 </head>
 <body>
 <header>
@@ -48,11 +49,34 @@
 </header>
 <main>
 <h1>Portfolio</h1>
-<p id=page-description>Examples of web development work that I have done</p>
+<p id=page-description>A selection of example web development work that I have built</p>
 <section class="panel portfolio">
 <h2>Card Game Database</h2>
 <div class=content>
-<img class=main-img src=/img/portfolio/trading-cards-1.jpg alt="Picture of Card Game Database">
+<div class=carousel>
+<ol class=screenshots>
+<li id=card-game-database-1 class=active-screenshot>
+<img src=/img/portfolio/card-game-database-1_hu5362b02f9196189d3ac4a4201b7f1823_616396_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+<li id=card-game-database-2>
+<img src=/img/portfolio/card-game-database-2_hu5362b02f9196189d3ac4a4201b7f1823_360609_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+<li id=card-game-database-3>
+<img src=/img/portfolio/card-game-database-3_hu5362b02f9196189d3ac4a4201b7f1823_3216830_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+</ol>
+<ol class=indexes>
+<li data-screenshot=card-game-database-1 class=active-index>
+<button type=button>⬤</button>
+</li>
+<li data-screenshot=card-game-database-2>
+<button type=button>⬤</button>
+</li>
+<li data-screenshot=card-game-database-3>
+<button type=button>⬤</button>
+</li>
+</ol>
+</div>
 <div class=links-and-description>
 <details open>
 <summary>
@@ -82,42 +106,83 @@
 </div>
 </section>
 <section class="panel portfolio">
-<h2>About Me Website</h2>
+<h2>Atlas</h2>
 <div class=content>
-<img class=main-img src=/img/portfolio/about-me-1.jpg alt="Picture of About Me Website">
+<div class=carousel>
+<ol class=screenshots>
+<li id=atlas-1 class=active-screenshot>
+<img src=/img/portfolio/atlas-1_hu3c4a94e9b3c3af2b23728d2c6c74890c_75297_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+<li id=atlas-2>
+<img src=/img/portfolio/atlas-2_hud42e912c7252379c88cfd7af0f607343_1954861_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+</ol>
+<ol class=indexes>
+<li data-screenshot=atlas-1 class=active-index>
+<button type=button>⬤</button>
+</li>
+<li data-screenshot=atlas-2>
+<button type=button>⬤</button>
+</li>
+</ol>
+</div>
 <div class=links-and-description>
 <details open>
 <summary>
 <h3>Requirements</h3>
 </summary>
-<p class=requirements>Describe who I am and act as my CV.</p>
+<p class=requirements>Act as the opperating system for the entire Fleet Assist business, taking in areas as disperate as running a call centre, managing the data on thousands of garages, organising finance activities and performing analytics on over £2bn in vehicle repair data.</p>
 </details>
 <details open>
 <summary>
 <h3>Technology</h3>
 </summary>
-<p class=description>The site was built using Hugo and makes extensive use of SVG images.</p>
-<p class=description>The layout uses a wide range of complex and modern CSS techniques including flexbox, grid and animations.</p>
-<p class=description>Furthermore the site is fully responsive allowing the user to view it on desktop or mobile. As well as providing print stylings designed to create an A4 CV when printed.</p>
-<p class=description>Graphically the site uses a large number of SVGs that are used to provide colour to the pages. These were all hand edited and optimised for web use.</p>
-<p class=description>It is deployed using a basic DevOps pipeline based on Github actions. On commit this builds all assets using Hugo and publishes it as a GitHub page.</p>
+<p class=description>Atlas was the main project I worked on during my 10 years at Fleet Assist. I designed and built the entire system from a greenfield project right through to it running all areas of the company's operations.</p>
+<p class=description>As a predominantly private system I am unfortunately only able to share publicly available screenshots from the system in this portfolio.</p>
+<p class=description>Starting development in 2012 the system was built using C# .NET. I always ensured the system was updated to reflect the state of the art within the .NET ecosystem and as .NET Core was developed we migrated onto that as it was released in 2016 and then subsequently onto .NET 5 in 2020.</p>
+<p class=description>Built on a Microsoft stack we followed a domain focused CQRS architecture using technologies such as Entity Framework, LESS, TypeScript, ADO.NET, SQL Server, Razor and Autofac. We further intergrated with a wide range of well known external services such as MapBox, Mailgun, TextLocal, Avaya PABX and internal customer systems.</p>
+<p class=description>The application was very data and process centric. To manage the company's processes I built a custom task system that could be configured in real time using a diagram of the process. Then to manage the large amounts of data we built a database of garages and vehicle data which won multiple industry accolades.</p>
+<p class=description>Working as a solo developer for the first few years I became a true full stack developer able to work on any area of the system and continued to develop the system right until the end of my time at Fleet Assist.</p>
 </details>
 <div class=links>
 <div class=deployed>
 <img width=20 height=20 src=/img/icons/others/web.min.svg alt="Weblink icon">
-<a href=https://www.crashdive.co.uk>www.crashdive.co.uk</a>
+<a href=https://atlas.fleetassist.co.uk>atlas.fleetassist.co.uk</a>
 </div>
 <div class=source>
 <img width=20 height=20 src=/img/icons/socials/github.min.svg alt="Github logo">
-<a href=https://github.com/crash-dive/CrashDive>github.com/crash-dive/CrashDive</a>
+<span>Source Code Private</span>
 </div>
 </div>
 </div>
 </section>
 <section class="panel portfolio">
-<h2>Fleet Assist Website</h2>
+<h2>Fleet Assist</h2>
 <div class=content>
-<img class=main-img src=/img/portfolio/fleet-assist-website-1.jpg alt="Picture of Fleet Assist Website">
+<div class=carousel>
+<ol class=screenshots>
+<li id=fleet-assist-1 class=active-screenshot>
+<img src=/img/portfolio/fleet-assist-1_hu8df1b81471a4e556057e53eb8e00d30e_310379_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+<li id=fleet-assist-2>
+<img src=/img/portfolio/fleet-assist-2_hu5195b7c3cf097bb5b9501b17905c44aa_2453579_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+<li id=fleet-assist-3>
+<img src=/img/portfolio/fleet-assist-3_hue49597b073fa0fdfe337d058fee5af44_863634_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+</ol>
+<ol class=indexes>
+<li data-screenshot=fleet-assist-1 class=active-index>
+<button type=button>⬤</button>
+</li>
+<li data-screenshot=fleet-assist-2>
+<button type=button>⬤</button>
+</li>
+<li data-screenshot=fleet-assist-3>
+<button type=button>⬤</button>
+</li>
+</ol>
+</div>
 <div class=links-and-description>
 <details open>
 <summary>
@@ -148,9 +213,38 @@
 </div>
 </section>
 <section class="panel portfolio">
-<h2>FleetNet Website</h2>
+<h2>FleetNet</h2>
 <div class=content>
-<img class=main-img src=/img/portfolio/fleet-net-1.jpg alt="Picture of FleetNet Website">
+<div class=carousel>
+<ol class=screenshots>
+<li id=fleet-net-1 class=active-screenshot>
+<img src=/img/portfolio/fleet-net-1_hu4ae7dc57f0b928b63e3ccc4c7c31f883_447280_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+<li id=fleet-net-2>
+<img src=/img/portfolio/fleet-net-2_huef79f8fbce24c4913eefdcf14f4299a4_688235_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+<li id=fleet-net-3>
+<img src=/img/portfolio/fleet-net-3_huef79f8fbce24c4913eefdcf14f4299a4_716295_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+<li id=fleet-net-4>
+<img src=/img/portfolio/fleet-net-4_hu4ae7dc57f0b928b63e3ccc4c7c31f883_341235_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+</ol>
+<ol class=indexes>
+<li data-screenshot=fleet-net-1 class=active-index>
+<button type=button>⬤</button>
+</li>
+<li data-screenshot=fleet-net-2>
+<button type=button>⬤</button>
+</li>
+<li data-screenshot=fleet-net-3>
+<button type=button>⬤</button>
+</li>
+<li data-screenshot=fleet-net-4>
+<button type=button>⬤</button>
+</li>
+</ol>
+</div>
 <div class=links-and-description>
 <details open>
 <summary>
@@ -175,6 +269,62 @@
 <div class=source>
 <img width=20 height=20 src=/img/icons/socials/github.min.svg alt="Github logo">
 <span>Source Code Private</span>
+</div>
+</div>
+</div>
+</section>
+<section class="panel portfolio">
+<h2>CV</h2>
+<div class=content>
+<div class=carousel>
+<ol class=screenshots>
+<li id=cv-1 class=active-screenshot>
+<img src=/img/portfolio/cv-1_hue92d2369d69d3232848132693e25b117_368563_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+<li id=cv-2>
+<img src=/img/portfolio/cv-2_hu28dae549a9ca8c305f90a4979f9145b9_348425_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+<li id=cv-3>
+<img src=/img/portfolio/cv-3_hu192aaba379deef1ed931b2f16f84cf84_478113_0x700_resize_box_3.png alt="Picture of portfolio website">
+</li>
+</ol>
+<ol class=indexes>
+<li data-screenshot=cv-1 class=active-index>
+<button type=button>⬤</button>
+</li>
+<li data-screenshot=cv-2>
+<button type=button>⬤</button>
+</li>
+<li data-screenshot=cv-3>
+<button type=button>⬤</button>
+</li>
+</ol>
+</div>
+<div class=links-and-description>
+<details open>
+<summary>
+<h3>Requirements</h3>
+</summary>
+<p class=requirements>Describe who I am and act as my CV.</p>
+</details>
+<details open>
+<summary>
+<h3>Technology</h3>
+</summary>
+<p class=description>The site was built using Hugo and makes extensive use of SVG images.</p>
+<p class=description>The layout uses a wide range of complex and modern CSS techniques including flexbox, grid and animations. This can be best seen on this page in the image carousel built using TypeScript and CSS.</p>
+<p class=description>Furthermore the site is fully responsive allowing the user to view it on desktop or mobile. As well as providing print stylings designed to create an A4 CV when printed.</p>
+<p class=description>Graphically the site uses a large number of SVGs that are used to provide colour to the pages. These were all hand edited and optimised for web use.</p>
+<p class=description>It is deployed using a basic DevOps pipeline based on Github actions. On commit this builds all assets using Hugo and publishes it as a GitHub page.</p>
+</details>
+<div class=links>
+<div class=deployed>
+<img width=20 height=20 src=/img/icons/others/web.min.svg alt="Weblink icon">
+<a href=https://www.crashdive.co.uk>www.crashdive.co.uk</a>
+</div>
+<div class=source>
+<img width=20 height=20 src=/img/icons/socials/github.min.svg alt="Github logo">
+<a href=https://github.com/crash-dive/CrashDive>github.com/crash-dive/CrashDive</a>
 </div>
 </div>
 </div>
