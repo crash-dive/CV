@@ -1,1 +1,0 @@
-(()=>{var a=document.getElementById("nav-button"),b=document.getElementById("nav-menu"),c=document.getElementById("nav-menu-frame");a.addEventListener("click",function(){a.classList.toggle("is-open"),a.classList.toggle("is-closed"),b.classList.toggle("is-open"),c.classList.toggle("is-open")})})()
