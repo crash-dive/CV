@@ -35,25 +35,28 @@ h1 {
     color: white;
 }
 
-.key-skills {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+#contact-info {
     display: flex;
-    color: white;
+    margin-top: 10px;
     font-family: var(--arial);
 }
 
-    .key-skills li {
+    #contact-info a {
+        color: white;
+        font-size: 1.1em;
+        display: block;
+        margin: 0;
+        padding: 0;
         flex-grow: 1;
-        flex-basis: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 10px 10px 0 10px;
-        margin: 0;
         text-align: center;
     }
+
+        #contact-info a:hover {
+            text-decoration: underline;
+        }
 
 #achievements-skills {
     margin-bottom: 10px;
@@ -75,6 +78,62 @@ h1 {
         font: var(--arial-black);
         font-weight: bold;
     }
+
+#experience {
+    padding: 5px 10px 10px;
+    margin-bottom: 10px;
+}
+
+    #experience h2 {
+        text-align: center;
+        border-bottom: 1px solid var(--very-dark-red);
+        margin: 0;
+    }
+
+    #experience p {
+        margin-top: 10px;
+    }
+
+#qualifications {
+    padding: 0 5px 0 5px;
+    margin-bottom: 10px;
+}
+
+    #qualifications h2 {
+        text-align: center;
+        border-bottom: 1px solid var(--very-dark-red);
+        margin: 0 5px;
+    }
+
+    .qualification-areas {
+        margin-bottom: 10px;
+    }
+
+        .qualification-areas h3 {
+            margin: 0 5px;
+        }
+
+        .qualification-areas a {
+            color: black;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .qualification-areas a:hover {
+            text-decoration: underline;
+        }
+
+        .qualification-name-abbr {
+            font-weight: bold;
+        }
+
+        .qualification-name {
+            flex-grow: 1;
+        }
+
+        .qualification-areas sup {
+            line-height: 0;
+        }
 
 #tech-experience {
     padding: 0 5px 5px 5px;
@@ -129,75 +188,6 @@ h1 {
                 margin-bottom: 2px;
             }
 
-
-#contact-info {
-    display: grid; 
-    gap: 10px 10px; 
-    margin-top: 10px;
-}
-
-    #contact-info section {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #contact-info h2 {
-        text-align: center;
-        border-bottom: 1px solid var(--very-dark-red);
-        margin: 0;
-        margin: 0 5px;
-    }
-
-    #contact-info a,
-    #contact-info p {
-        color: black;
-        font-size: 1.1em;
-        display: block;
-        margin: 0;
-        padding: 10px;
-        flex-grow: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-        #contact-info a:hover {
-            text-decoration: underline;
-        }
-
-#education {
-    margin-top: 10px;
-    padding: 0 10px 10px 10px;
-}
-
-    #education h2 {
-        border-bottom: 1px solid var(--very-dark-red);
-        margin: 0 0 5px 0;
-    }
-
-    #educators {
-        list-style: none;
-        padding: 0;
-    }
-
-        .educator {
-            display: flex;
-        }
-
-        .educator-name-and-time {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .educator-logo {
-            display: flex;
-            align-items: center;
-        }
-            .educator-logo img {
-                height: 3em;
-            }
-
 .employment-panel {
     border-radius: 10px;
     margin-top: 10px;
@@ -209,25 +199,20 @@ h1 {
     }
     
     .employer-and-time {
-        display: flex;
-        align-items: center;
+        display: block;
         border-top: 1px solid var(--very-dark-red);
         border-bottom: 1px solid var(--very-dark-red);
         padding: 5px 0;
         margin: 5px 0;
+        color: black;
     }
-    
-        .employer-logo {
-            display: flex;
-            align-items: center;
-        }
-        .employer-logo img {
-            height: 2em;
+
+        .employer-and-time:hover {
+            text-decoration: underline;
         }
 
         .employer-name {
             font-weight: bold;
-            display: block;
         }
 
         .employment-time,
@@ -288,61 +273,13 @@ h1 {
         margin-top: 10px;
     }
 
-    #contact-info {
-        grid-template-columns: 1fr 1fr; 
-        grid-template-rows: 1fr 1fr; 
-        grid-template-areas: 
-            ". ."
-            ". ."; 
+    .qualification-name-abbr {
+        width: 10%;
     }
 
-    .tech-sector {
-        border-bottom: 1px solid var(--very-dark-red);
+    .qualification-body {
+        width: 8%;
     }
-
-        .tech-sector:last-child {
-            border-bottom: none;
-        }
-
-        .tech-logos li.tech-sector-name {
-            border: 1px dashed var(--very-dark-red);
-            border-radius: 10px;
-            justify-content: center;
-        }
-        
-        .tech-logos li {
-            width: 50%;
-        }
-
-        #education h2 {
-            text-align: center;
-        }
-
-            .educator {
-                flex-wrap: wrap;
-            }
-                .educator:first-child {
-                    border-bottom: 1px solid var(--very-dark-red);
-                    padding-bottom: 5px;
-                    margin-bottom: 5px;
-                }
-
-                .educator-logo {
-                    border-bottom: 1px dashed var(--very-dark-red);
-                    padding-bottom: 5px;
-                    margin-bottom: 5px;
-                }
-
-                .educator-name-and-time {
-                    border-bottom: 1px dashed var(--very-dark-red);
-                    flex-grow: 1;
-                    margin-bottom: 5px;
-                }
-
-                .education-detail {
-                    width: 100%;
-                    padding-left: 1em;
-                }
 
     .employment-panel h2 {
         text-align: center;
@@ -381,51 +318,19 @@ h1 {
         #achievements-skills section {
             flex-grow: 1;
             flex-basis: 0;
+            margin-right: 10px;
         }
 
-    #achievements-skills section {
-        margin-right: 10px;
-    }
-
-    #achievements-skills section:last-child {
-        margin-right: 0;
-    }
-
-    #tech-sectors {
-        display: flex;
-    }
-
-        .tech-sector {
-            flex-grow: 1;
-            flex-basis: 0;
-            border-right: 1px solid var(--very-dark-red);
+        #achievements-skills section:last-child {
+            margin-right: 0;
         }
 
-            .tech-sector:last-child {
-                border-right: none;
-            }
-
-            .tech-logos li {
-                width: 50%;
-            }
-            
-    #contact-info {
-        grid-template-columns: 1fr 1fr 1fr 1fr; 
-        grid-template-rows: 1fr; 
-        grid-template-areas: ". . . .";
-    }
-
-    #educators {
-        display: flex;
-        flex-direction: row;
-    }
-
-        .educator {
-            width: 50%;
+        .qualification-name-abbr {
+            width: 8%;
         }
-
-        .educator:first-child {
-            border-right: 1px solid var(--very-dark-red);
+    
+        .qualification-body {
+            width: 8%;
         }
 
     .employer-logo {
@@ -467,87 +372,28 @@ h1 {
 
     .panel {
         background: white;
-    }
-
-    .employment-panel,
-    #education,
-    #other-info {
         border: none;
     }
 
-        .employment-panel h2,
-        #education h2,
-        #other-info h2 {
+        .panel h2 {
             border-top: 1px solid var(--very-dark-red);
         }
 
-    #contact-info,
-    #cio {
-        break-after: page;
-    }
-
-    #achievements-skills section {
-        margin-top: 10px;
-    }
-
     #contact-info {
-        grid-template-columns: 1fr 1fr 1fr 1fr; 
-        grid-template-rows: 1fr; 
-        grid-template-areas: ". . . .";
+        margin-bottom: 10px;
     }
 
-        #contact-info section {
-            border: none;
-        }
-
-            #contact-info h2 {
-                border: none;
-                font-size: 1em;
-            }
-
-            #contact-info a,
-            #contact-info p { 
-                padding: 0;
-            }
-
-    #tech-sectors {
-        display: flex;
+    #achievements-skills {
+        margin: 0;
     }
 
-        .tech-sector {
-            flex-grow: 1;
-            flex-basis: 0;
-            border-right: 1px solid var(--very-dark-red);
-        }
-            
-            .tech-sector:last-child {
-                border-right: none;
-            }
-        
-            .tech-logos li {
-                width: 100%;
-            }
-            
-            .tech-logos li a {
-                flex-direction: row;
-                justify-content: flex-start;
-            }
-            
-            .tech-logos li a img {
-                margin: 0 5px;
-                height: 1em;
-            }
-    
-    #education h2 {
-        border-bottom-style: dashed;
+    .qualification-name-abbr {
+        width: 10%;
     }
-        .educator:first-child {
-            margin-bottom: 10px;
-        }
 
-        .educator-name-and-time {
-            width: 30%;
-        }
+    .qualification-body {
+        width: 10%;
+    }
 
     .employment-panel {
         margin-top: 0;
@@ -566,17 +412,17 @@ h1 {
             display: inline;
         }
 
-    #other-info h2 {
-        border-bottom-style: dashed;
-        text-align: left;
+    #experience {
+        break-after: page;
     }
 
-        #other-info ul{
-            display: flex;
-            flex-wrap: wrap;
-        }
 
-            #other-info li{
-                width: 50%;
-            }
+    #other-info ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        #other-info li {
+            width: 50%;
+        }
 }
