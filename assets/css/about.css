@@ -41,7 +41,10 @@ h1 {
     font-family: var(--arial);
 }
 
-    #contact-info a {
+    #email,
+    #phone,
+    #website,
+    #location {
         color: white;
         font-size: 1.1em;
         display: block;
@@ -216,6 +219,11 @@ h1 {
             height: 40px;
         }
 
+
+        #website, #location {
+            display: none;
+        }
+
     #achievements-skills section {
         margin-top: 10px;
     }
@@ -260,7 +268,7 @@ h1 {
         #download-pdf-img {
             height: 4em;
         }
-    
+        
     #achievements-skills {
         display: flex;
         margin-top: 10px;
