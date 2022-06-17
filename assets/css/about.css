@@ -188,21 +188,6 @@ h1 {
                 font-size: 1.1em;
             }
 
-#other-info{
-    margin-top: 10px;
-    padding: 0 10px 10px 10px;
-}
-
-    #other-info h2{
-        text-align: center;
-        border-bottom: 1px solid var(--very-dark-red);
-        margin: 0 0 5px 0;
-    }
-
-    #other-info span{
-        font-weight: bold;
-    }
-
 @media screen and (max-width: 1023px) {
     h1 {
         margin-top: 45px;
@@ -291,24 +276,6 @@ h1 {
         .qualification-body {
             width: 8%;
         }
-
-    .employer-logo {
-        margin-right: 10px;
-    }
-
-    #other-info{
-        margin-top: 10px;
-        padding: 0 10px 10px 10px;
-    }
-
-        #other-info ul{
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        #other-info li{
-            width: 50%;
-        }
 }
 
 @media print {
@@ -351,15 +318,11 @@ h1 {
     }
 
     .qualification-body {
-        width: 10%;
+        width: 15%;
     }
 
     .employment-panel {
         margin-top: 0;
-    }
-
-    .employer-logo {
-        margin-right: 10px;
     }
 
         .employer-and-time {
@@ -370,18 +333,13 @@ h1 {
         .employment-duration {
             display: inline;
         }
-
+    
     #experience {
+        margin: 0;
+    }
+
+    #qualifications {
         break-after: page;
+        margin: 0;
     }
-
-
-    #other-info ul {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-        #other-info li {
-            width: 50%;
-        }
 }
