@@ -1,0 +1,277 @@
+{{ define "main" }}
+
+<h1>Jonathon Smith</h1>
+<p id="tagline">Cybersecurity &amp; Technology Leader</p>
+
+<div id="contact-info">
+    <a id="email" href="mailto:cv@crashdive.co.uk">cv@crashdive.co.uk</a>
+    <a id="phone" href="tel:+447786003999">07786003999</a>
+    <a id="website" href="https://www.crashdive.co.uk/">crashdive.co.uk</a>
+    <a id="location" href="https://www.google.co.uk/maps/place/Kettering/">Kettering, UK</a>
+</div>
+
+<a id="download-pdf" title="Download PDF" href="/docs/jonathon-smith-cybersecurity-cv.pdf" download="Jonathon-Smith-Cybersecurity-CV.pdf">
+    {{ $downloadPdf := resources.Get "img/icons/others/download-pdf.svg" | minify }}
+    <img id="download-pdf-img" src="{{ $downloadPdf.RelPermalink }}" alt="Download PDF" />
+</a>
+
+<div id="achievements-skills">
+    <section class="panel">
+        <h2>Achievements</h2>
+        <ul>
+            <li><span class="skill-name">Built</span> award winning technology platform for automotive financial services company</li>
+            <li><span class="skill-name">Scaled</span> technology team from 0 to 10 members</li>
+            <li><span class="skill-name">Budgeted</span> £5m+ revenue business as director &amp; CIO</li>
+            <li><span class="skill-name">Sold</span> business delivering multi-million exit for investors</li>
+        </ul>
+    </section>
+    
+    <section class="panel">
+        <h2>Key Skills</h2>
+        <ul>
+            <li><span class="skill-name">Cybersecurity</span>: 10+ years of networking, software and sysadmin security experience</li>
+            <li><span class="skill-name">Full Stack Web Developer</span>: C#, .NET, SQL, TypeScript &amp; more</li>
+            <li><span class="skill-name">Risk &amp; Governance</span>: DPO responsible for GDPR within regulated industry</li>
+            <li><span class="skill-name">People Manager</span>: Managed a team of 10 and director of business with 50+ staff</li>
+        </ul>
+    </section>
+
+</div>
+
+<section id="work-summary" class="panel">
+    <h2>Work Summary</h2>
+    <p>Founder and director of Cybersmith which provides cybersecurity protection to SMEs.</p>
+    <p>Previously spent 10 years as CIO of Fleet Assist working in the automotive finance sector, before fully exiting via a sale to private equity in July 2021.</p>
+</section>
+
+<section id="qualifications" class="panel">
+    <h2>Qualifications</h2>
+    <div class="qualification-areas">
+        <div class="qualification-areas">
+            <h3>Security</h3>
+            <ul class="qualification-names">
+                <li>
+                    <a href="https://www.credly.com/badges/23d2d365-5774-4e70-b7be-d6d5be020ffe/public_url">
+                        <abbr class="qualification-name-abbr">MCIIS</abbr>
+                        <abbr class="qualification-body">CIISec</sup></abbr>
+                        <span class="qualification-name">Full Member of the Chartered Institute of Information Security</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credly.com/badges/db88cae5-f49a-426d-ada8-8bd5e0bf9193/public_url">
+                        <abbr class="qualification-name-abbr">CISSP</abbr>
+                        <abbr class="qualification-body">ISC<sup>2</sup></abbr>
+                        <span class="qualification-name">Certified Information Systems Security Professional</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credly.com/badges/98c7e6d6-ddf2-42cd-886e-ea73decb7e7d/public_url">
+                        <abbr class="qualification-name-abbr">ISSMP</abbr>
+                        <abbr class="qualification-body">ISC<sup>2</sup></abbr>
+                        <span class="qualification-name">Information Systems Security Management Professional</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credly.com/badges/b50becd2-e095-435e-b154-e3de2a9d6956/public_url">
+                        <abbr class="qualification-name-abbr">CCSP</abbr>
+                        <abbr class="qualification-body">ISC<sup>2</sup></abbr>
+                        <span class="qualification-name">Certified Cloud Security Professional</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credly.com/badges/53296b70-1bea-49b7-b5a1-ff25055d29d4/public_url">
+                        <abbr class="qualification-name-abbr">CCSK</abbr>
+                        <abbr class="qualification-body">CSA</abbr>
+                        <span class="qualification-name">Certificate of Cloud Security Knowledge</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credly.com/badges/86d667c5-1ff4-47cb-998a-d11fbdbc16d4/public_url">
+                        <abbr class="qualification-name-abbr">CISM</abbr>
+                        <abbr class="qualification-body">ISACA</abbr>
+                        <span class="qualification-name">Certified Information Security Manager</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credly.com/badges/fabd5d5b-c3ea-4d53-97f5-551ad68140b3/public_url">
+                        <abbr class="qualification-name-abbr">CISA</abbr>
+                        <abbr class="qualification-body">ISACA</abbr>
+                        <span class="qualification-name">Certified Information Security Auditor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credential.net/fbab8f1a-8c03-4160-814c-686fa38b06b2?username=crashdive#gs.3urqq2">
+                        <abbr class="qualification-name-abbr">CISMP</abbr>
+                        <abbr class="qualification-body">BCS</abbr>
+                        <span class="qualification-name">Certificate in Information Security Management Principles</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credential.net/ffe84d15-5735-40e8-a5f8-024bc733e187?username=crashdive#gs.jwdpkt">
+                        <abbr class="qualification-name-abbr">CRT</abbr>
+                        <abbr class="qualification-body">CREST</abbr>
+                        <span class="qualification-name">Registered Penetration Tester</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credly.com/badges/b788a865-b5e5-43ea-9ae7-906b30df754f/public_url">
+                        <abbr class="qualification-name-abbr">CBBH</abbr>
+                        <abbr class="qualification-body">HTB</abbr>
+                        <span class="qualification-name">Certified Bug Bounty Hunter</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="qualification-areas">
+            <h3>Governance, Risk &amp; Compliance</h3>
+            <ul class="qualification-names">
+                <li>
+                    <a href="https://www.credential.net/0ca72fd3-0ec2-4031-91f5-eb12b7321f6c">
+                        <abbr class="qualification-name-abbr">FIP</abbr>
+                        <abbr class="qualification-body">IAPP</abbr>
+                        <span class="qualification-name">Fellow of Information Privacy</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credential.net/6b266b91-b6bf-4bac-9561-b8c5719fa935">
+                        <abbr class="qualification-name-abbr">CIPP/E</abbr>
+                        <abbr class="qualification-body">IAPP</abbr>
+                        <span class="qualification-name">Certified Information Privacy Professional (Europe)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credential.net/a1c332de-e102-4dc5-91ee-b86fa34512f6">
+                        <abbr class="qualification-name-abbr">CIPM</abbr>
+                        <abbr class="qualification-body">IAPP</abbr>
+                        <span class="qualification-name">Certified Information Privacy Manager</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credential.net/4b6287ce-f83d-462e-a31e-e2bc4f9d414b">
+                        <abbr class="qualification-name-abbr">CIPT</abbr>
+                        <abbr class="qualification-body">IAPP</abbr>
+                        <span class="qualification-name">Certified Information Privacy Technologist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credential.net/7437c70c-bc1d-48b4-9d04-e9ec4af08a02?username=crashdive#gs.01hl04">
+                        <abbr class="qualification-name-abbr">PCDP</abbr>
+                        <abbr class="qualification-body">BCS</abbr>
+                        <span class="qualification-name">Practitioner Certificate in Data Protection (UK)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://bsi.secure.force.com/training/certificateVerification?shareId=769c7ec480893b0ba930a0bd0ad046d515e8f191">
+                        <abbr class="qualification-name-abbr">27001</abbr>
+                        <abbr class="qualification-body">BSI</abbr>
+                        <span class="qualification-name">ISO27001 Lead Auditor Practitioner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credential.net/13c59810-99d2-44a8-885a-c17d90e2035b?username=crashdive#gs.3ut941">
+                        <abbr class="qualification-name-abbr">ITIL</abbr>
+                        <abbr class="qualification-body">AXELOS</abbr>
+                        <span class="qualification-name">ITIL Foundation Certificate</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.credly.com/badges/b93473b2-1ecb-4144-be68-6554688e138c/public_url">
+                        <abbr class="qualification-name-abbr">COBIT</abbr>
+                        <abbr class="qualification-body">ISACA</abbr>
+                        <span class="qualification-name">COBIT Foundation Certificate</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="qualification-areas">
+            <h3>Degree &amp; Education</h3>
+            <ul class="qualification-names">
+                <li>
+                    <a href="https://www.aber.ac.uk/">1st Class BScEcon International Politics and the Third World (Aberystwyth University)</a>
+                </li>
+                <li>
+                    <a href="https://www.latimer.org.uk/">4 A Levels &amp; 10 GSCEs A-C including Maths &amp; English (Latimer College)</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="contractor" class="panel employment-panel">
+    <h2>Founder &amp; Managing Director</h2>
+    <a href="https://www.cybersmith.co.uk/" class="employer-and-time" >
+        <span class="employer-name">Cybersmith</span>
+        <span class="employment-time">Mar 2022 to Now</span>
+    </a>
+    <div class="employment-description">
+        <p>Provides cybersecurity consultancy and software to SMEs to help them secure their systems.</p>
+    </div>
+</section>
+
+<section id="contractor" class="panel employment-panel">
+    <h2>Contractor</h2>
+    <a href="https://www.crashdive.co.uk/" class="employer-and-time" >
+        <span class="employer-name">Contractor</span>
+        <span class="employment-time">Feb 2020 to Feb 2022 (2 yrs)</span>
+    </a>
+    <div class="employment-description">
+        <p>During this time I took short term contracts, worked as a volunteer for local organisations and explored other interests.</p>
+    </div>
+</section>
+
+<section id="cio" class="panel employment-panel">
+    <h2>Chief Information Officer, IT Director &amp; IT Manager</h2>
+    <a href="https://www.fleetassist.co.uk/" class="employer-and-time" >
+        <span class="employer-name">Fleet Assist</span>
+        <span class="employment-time">Nov 2009 to Jan 2020</span>
+        <span class="employment-duration">(10 yrs 3 mos)</span>
+    </a>
+    <div class="employment-description">
+        <ul>
+            <li>
+                <span class="employment-skill">Security</span>: Worked to ISO 27001 best practices and regularly passed IT security audits from our FCA regulated customers.
+            </li>
+            <li>
+                <span class="employment-skill">Software Development</span>: Developed from a greenfield project, code reviewed and project managed the web based "Atlas" system which was the company's primary system.
+            </li>
+            <li>
+                <span class="employment-skill">Data Analytics</span>: Designed and built a multi-award winning (Fleet News and Alphabet) data analytics platform to process over £2bn in automotive maintenance data.
+            </li>
+            <li>
+                <span class="employment-skill">IT &amp; Cloud</span>: Created and managed an on-prem/cloud hybrid Hyper-V based Windows Server environment within a local server rooms and Azure.
+            </li>
+            <li>
+                <span class="employment-skill">People</span>: Line managed 6 direct reports, with a team of 10 in total across the IT, Software Development, Analytics, Data and Rental Risk departments.
+            </li>
+            <li>
+                <span class="employment-skill">Mentorship</span>: Shepherded technical staff through multi year apprenticeships and industry certification programs as well as acting as a guide for young staff.
+            </li>
+            <li>
+                <span class="employment-skill">Networking</span>: Procured, configured and monitored a fully redundant network using Juniper firewalls and switches combined with Ubiquiti access points.
+            </li>
+            <li>
+                <span class="employment-skill">Telephony</span>: Scaled an Avaya PABX, call reporting and recording system from a 1 to 20+ seat call centre.
+            </li>
+            <li>
+                <span class="employment-skill">Procurement</span>: Completed multiple IT technology refreshes with budgets up to £100k on projects ranging from software migrations to networking and server installs. 
+            </li>
+            <li>
+                <span class="employment-skill">Facilities</span>: Managed the challenging environment of a 15<sup>th</sup> century manor house and a £250k modern office refurbishment.
+            </li>
+            <li>
+                <span class="employment-skill">Sales</span>: Won multiple new contracts as the lead tender writer &amp; technical sales presenter for new customers.
+            </li>
+            <li>
+                <span class="employment-skill">Presentation</span>: Attended and gave presentations at industry events such as FleetNet and BVRLA forums.
+            </li>
+            <li>
+                <span class="employment-skill">M&amp;A</span>: Involved in further M&A and refinancing activities, with solid experience examining company accounts, managing investors and raising capital.
+            </li>
+            <li>
+                <span class="employment-skill">Risk Management</span>: Built tools to track our exposure and provided final sign off on the supply of vehicles within our multi-million rental finance business.
+            </li>
+        </ul>
+    </div>
+</section>
+
+{{ end }}

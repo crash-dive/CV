@@ -4,24 +4,6 @@
 <p id="page-description">Examples of my web development skills</p>
 
 {{ partial "portfolio" (dict
-    "title" "Card Game Database"
-    "imgs" (slice 
-        "card-game-database-1"
-        "card-game-database-2"
-        "card-game-database-3"
-    )
-    "url" "cards.crashdive.co.uk"
-    "github" "github.com/crash-dive/Cards"
-    "requirements" "Provide a database of the trading card games I collect that allows the user to search different games, then see what cards I need and what I have available to trade."
-    "description" (slice 
-        "The site was built using Hugo and uses Google Sheets as a backend. This is done by publishing the sheets as CSVs and then pulling them down in JavaScript to render them on the page in HTML. It makes extensive use of the tabulator and papaparse libraries to do this."
-        "This architecture allowed me to keep using Google Sheets to track my collections and use a static site hosting option to reduce costs but still provide an interactive backend."
-        "I often link to pages on the site when talking on Facebook and wanted the site to have full Open Graph support. However Open Graph requires a raster image of the page to show when rendering the preview, the large number of games made creating this image manually very time consuming."
-        "To address this I created a part of the build step that generates these images from a HTML page when a new game is added. It does this by running an NPM task using the headless chrome puppeteer tool to render the page and extracting the images from that page."
-    )
-)}}
-
-{{ partial "portfolio" (dict
     "title" "Atlas"
     "imgs" (slice 
         "atlas-1"
@@ -58,6 +40,24 @@
 )}}
 
 {{ partial "portfolio" (dict
+    "title" "Card Game Database"
+    "imgs" (slice 
+        "card-game-database-1"
+        "card-game-database-2"
+        "card-game-database-3"
+    )
+    "url" "cards.crashdive.co.uk"
+    "github" "github.com/crash-dive/Cards"
+    "requirements" "Provide a database of the trading card games I collect that allows the user to search different games, then see what cards I need and what I have available to trade."
+    "description" (slice 
+        "The site was built using Hugo and uses Google Sheets as a backend. This is done by publishing the sheets as CSVs and then pulling them down in JavaScript to render them on the page in HTML. It makes extensive use of the tabulator and papaparse libraries to do this."
+        "This architecture allowed me to keep using Google Sheets to track my collections and use a static site hosting option to reduce costs but still provide an interactive backend."
+        "I often link to pages on the site when talking on Facebook and wanted the site to have full Open Graph support. However Open Graph requires a raster image of the page to show when rendering the preview, the large number of games made creating this image manually very time consuming."
+        "To address this I created a part of the build step that generates these images from a HTML page when a new game is added. It does this by running an NPM task using the headless chrome puppeteer tool to render the page and extracting the images from that page."
+    )
+)}}
+
+{{ partial "portfolio" (dict
     "title" "FleetNet"
     "imgs" (slice 
         "fleet-net-1"
@@ -82,7 +82,7 @@
         "cv-3"
     )
     "url" "www.crashdive.co.uk"
-    "github" "github.com/crash-dive/CrashDive"
+    "github" "github.com/crash-dive/CV"
     "requirements" "Describe who I am and act as my CV."
     "description" (slice 
         "The site was built using Hugo and makes extensive use of SVG images."
@@ -137,7 +137,7 @@
                 
                 <div class="links">
                     <div class="deployed">
-                        {{ $logo := resources.Get "img/icons/others/web.svg" | minify }}
+                        {{ $logo := resources.Get "img/icons/others/web-black.svg" | minify }}
                         <img width="20" height="20" src="{{ $logo.RelPermalink }}" alt="Weblink icon" />
                         {{ if isset . "url" }}
                             <a href="https://{{ .url }}">{{ .url }}</a>
