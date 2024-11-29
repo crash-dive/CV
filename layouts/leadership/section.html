@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <h1>Jonathon Smith</h1>
-<p id="tagline">Cybersecurity &amp; Technology Leader</p>
+<p id="tagline">Technology &amp; Cybersecurity Leader</p>
 
 <div id="contact-info">
     <a id="email" href="mailto:cv@crashdive.co.uk">cv@crashdive.co.uk</a>
@@ -10,7 +10,7 @@
     <a id="location" href="https://www.google.co.uk/maps/place/Kettering/">Kettering, UK</a>
 </div>
 
-<a id="download-pdf" title="Download PDF" href="/docs/jonathon-smith-cybersecurity-cv.pdf" download="Jonathon-Smith-Cybersecurity-CV.pdf">
+<a id="download-pdf" title="Download PDF" href="/docs/jonathon-smith-leadership-cv.pdf" download="Jonathon-Smith-Leadership-CV.pdf">
     {{ $downloadPdf := resources.Get "img/icons/others/download-pdf.svg" | minify }}
     <img id="download-pdf-img" src="{{ $downloadPdf.RelPermalink }}" alt="Download PDF" />
 </a>
@@ -40,8 +40,8 @@
 
 <section id="work-summary" class="panel">
     <h2>Work Summary</h2>
-    <p>Founder and director of Cybersmith which provides cybersecurity protection to SMEs.</p>
-    <p>Previously spent 10 years as Chief Information Officer of Fleet Assist working in the automotive finance sector, before fully exiting via a sale to private equity in July 2021.</p>
+    <p>Founder and director of Cybersmith through which I provide technology &amp; cybersecurity services.</p>
+    <p>Previously spent 10 years as Chief Information Officer in the automotive finance sector, before exiting in Feb 2020 after a sale to private equity.</p>
 </section>
 
 <section id="qualifications" class="panel">
@@ -182,6 +182,13 @@
                     </a>
                 </li>
                 <li>
+                    <a href="https://registry.blockmarktech.com/certificates/db83ef15-515c-4429-a806-3af0dffe2b80/">
+                        <abbr class="qualification-name-abbr">CE</abbr>
+                        <abbr class="qualification-body">IASME</abbr>
+                        <span class="qualification-name">Cyber Essentials+ Lead Assessor</span>
+                    </a>
+                </li>
+                <li>
                     <a href="https://www.credential.net/13c59810-99d2-44a8-885a-c17d90e2035b?username=crashdive#gs.3ut941">
                         <abbr class="qualification-name-abbr">ITIL</abbr>
                         <abbr class="qualification-body">AXELOS</abbr>
@@ -212,7 +219,7 @@
 </section>
 
 <section id="contractor" class="panel employment-panel">
-    <h2>Founder &amp; Managing Director</h2>
+    <h2>Managing Director</h2>
     <a href="https://www.cybersmith.co.uk/" class="employer-and-time" >
         <span class="employer-name">Cybersmith</span>
         <span class="employment-time">Mar 2022 to Now</span>
@@ -220,32 +227,32 @@
     <div class="employment-description">
         <ul>
             <li>
+                <span class="employment-skill">Team Management</span>: Led at board level on how best to structure technology teams and integrate them with third party suppliers. 
+            </li>
+            <li>
                 <span class="employment-skill">Security Consultancy</span>: Provided guidance on how organisations can improve their security posture and manage their supply chains.
             </li>
             <li>
-                <span class="employment-skill">Auditing</span>: Helped organisations certify against the Cyber Essentials, Cyber Essentials+ and IASME Cyber Assurance schemes.
+                <span class="employment-skill">Auditing &amp; Testing</span>: Helped organisations through Cyber Essentials+, ISO27001 and technical penetration testing.
             </li>
             <li>
-                <span class="employment-skill">Pen Testing</span>: Scoped, performed and wrote reports for pen tests against customer web applications and infrastructure. 
+                <span class="employment-skill">Data Protection</span>: Advised on compliance with the UK and EU GDPR as well as on general privacy best practice.
             </li>
             <li>
-                <span class="employment-skill">Data Protection</span>: Advised organisations on compliance with the UK and EU GDPR as well as on general privacy best practice.
-            </li>
-            <li>
-                <span class="employment-skill">Web Development</span>: Architected, designed and built "Shield" our web based security management platform for SMEs.
+                <span class="employment-skill">Web Development</span>: Reviewed complex web applications as a qualified penetration tester and provided guidance on how to improve them.
             </li>
         </ul>
     </div>
 </section>
 
-<section id="contractor" class="panel employment-panel">
-    <h2>Non-Compete Clause &amp; Contractor</h2>
+<section id="non-compete" class="panel employment-panel">
+    <h2>Non-Compete Clause</h2>
     <a href="https://www.crashdive.co.uk/" class="employer-and-time" >
-        <span class="employer-name">Contractor</span>
+        <span class="employer-name">Various Local Charities</span>
         <span class="employment-time">Feb 2020 to Feb 2022 (2 yrs)</span>
     </a>
     <div class="employment-description">
-        <p>I took short term contracts, volunteered for local organisations and explored other interests.</p>
+        <p>The business sale included a non-compete period. I spent this time volunteering for local organisations.</p>
     </div>
 </section>
 
