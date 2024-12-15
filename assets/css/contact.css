@@ -4,10 +4,10 @@ main {
     height: 100%;
 }
 
-#email, #frame {
+#frame, #content {
     position: fixed;
     box-sizing: border-box;
-    font-family: var(--spantaran);
+    font-family: var(--arial-black);
 
     height: 50%;
     width: 90%;
@@ -28,15 +28,19 @@ main {
     );
 }
 
-#email {
-    color: white;
+#content {
     background-color: var(--dark-red);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: left;
+    flex-direction: column;
 }
 
-    #email:hover {
+    #content a {
+        color: white;
+    }
+
+    #content a:hover {
         text-decoration: underline;
     }
 
