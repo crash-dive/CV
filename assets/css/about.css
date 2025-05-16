@@ -21,12 +21,11 @@ main p, main ul {
 
 h1 {
     font-size: 3em;
-    font-family: var(--spantaran);
     text-align: center;
     margin: 0;
 }
 
-#page-description {
+#tagline {
     text-align: center;
     font-size: 1.2em;
     font-family: var(--arial);
@@ -35,40 +34,173 @@ h1 {
     color: white;
 }
 
-#about-options {
+.contact-info {
+    display: flex;
     margin-top: 10px;
+    font-family: var(--arial);
 }
-    #about-options a {
-        transition: transform .1s linear;
+
+    .contact-info a {
+        color: white;
+        font-size: 1.1em;
+        margin: 0;
+        padding: 0;
+        flex-grow: 1;
+        flex-basis: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
-        #about-options a:hover {
-            transform: scale(1.01);
+        .contact-info a:hover {
+            text-decoration: underline;
         }
 
-            #about-options a:hover .click-for-info {
-                text-decoration: underline;
-            }
+        #contact-info-second-page {
+            display: none;
+        }
 
-    #about-options h2 {
+#achievements-skills {
+    margin-bottom: 10px;
+}
+
+    #achievements-skills h2 {
         text-align: center;
         border-bottom: 1px solid var(--very-dark-red);
         margin: 0 5px;
     }
 
-    #about-options div {
-        padding: 10px 0 10px 10px;
+    #achievements-skills ul {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom:10px;
+    }
+
+    #achievements-skills .skill-name {
+        font: var(--arial-black);
+        font-weight: bold;
+    }
+
+#personal-summary {
+    padding: 5px 10px 10px;
+    margin-bottom: 10px;
+}
+
+    #personal-summary h2 {
+        text-align: center;
+        border-bottom: 1px solid var(--very-dark-red);
+        margin: 0;
+    }
+
+    #personal-summary p {
+        margin-top: 5px;
         text-align: center;
     }
 
-    #about-options img {
-        height: 150px;
-        margin: 5px 0;
+        #personal-summary p:first-child {
+            margin-top: 10px;
+        }
+
+    #personal-summary a {
+        color: black;
     }
 
-    #about-options .click-for-info {
-        font-weight: bold;
+    #personal-summary a:hover {
+        text-decoration: underline;;
     }
+
+#qualifications {
+    padding: 0 5px 0 5px;
+    margin-bottom: 10px;
+}
+
+    #qualifications h2 {
+        text-align: center;
+        border-bottom: 1px solid var(--very-dark-red);
+        margin: 0 5px;
+    }
+
+    .qualification-areas {
+        margin-bottom: 10px;
+    }
+
+        .qualification-areas h3 {
+            margin: 0 5px;
+        }
+
+        .qualification-areas a,
+        .qualification-areas .qualification {
+            color: black;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .qualification-areas a:hover {
+            text-decoration: underline;
+        }
+
+        .qualification-name-abbr {
+            font-weight: bold;
+        }
+
+        .qualification-name {
+            flex-grow: 1;
+        }
+
+        .qualification-areas sup {
+            line-height: 0;
+        }
+
+.employment-panel {
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 5px 10px 10px 10px;
+}
+
+    .employment-panel h2{
+        margin: 0;
+    }
+    
+    .employer-and-time {
+        display: block;
+        border-top: 1px solid var(--very-dark-red);
+        border-bottom: 1px solid var(--very-dark-red);
+        padding: 5px 0;
+        margin: 5px 0;
+        color: black;
+    }
+
+        .employer-and-time:hover {
+            text-decoration: underline;
+        }
+
+        .employer-name {
+            font-weight: bold;
+        }
+
+        .employment-time,
+        .employment-duration {
+            font-style: italic;
+        }
+
+        .employment-description p {
+            margin-bottom: 10px;
+        }
+
+            .employment-description p:last-child {
+                margin-bottom: 0;
+            }
+
+        .employment-description li {
+            margin-bottom: 5px;
+        }
+
+            .employment-skill {
+                color: var(--dark-red);
+                font-family: var(--arial-black);
+                font-size: 1.1em;
+            }
 
 @media screen and (max-width: 1023px) {
     h1 {
@@ -76,30 +208,166 @@ h1 {
         text-shadow: 0 2px 5px black;
     }
 
-    #about-options a {
-        display: block;
+    #download-pdf {
+        position: absolute;
+        top: 1%;
+        left: 2%;
+    }
+    
+        #download-pdf-img {
+            height: 40px;
+        }
+
+
+    .contact-info {
+        flex-direction: column;
+        margin-top: 0;
+    }
+    
+        .contact-info .location {
+            display: none;
+        }
+
+    #personal-summary p {
+        text-align: left;
     }
 
-    #about-options a:last-child {
+    #achievements-skills section {
         margin-top: 10px;
     }
+
+    .qualification-name-abbr {
+        margin-right: 5px;
+    }
+
+    .qualification-body::before {
+        content: ' - ';
+    }
+
+    .qualification-name {
+        width: 100%;
+    }
+
+    .employment-panel h2 {
+        text-align: center;
+    }
+
+    .employer-and-time {
+        justify-content: space-around;
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+
+        .employment-duration {
+            display: block;
+        }
 }
 
 @media screen and (min-width: 1024px) {
     h1 {
         text-shadow: 0 2px 5px black;
     }
-    #about-options {
+    
+    #download-pdf {
+        position: absolute;
+        top: 1%;
+    }
+
+        #download-pdf-img {
+            height: 4em;
+        }
+        
+    #achievements-skills {
         display: flex;
+        margin-top: 10px;
     }
 
-    #about-options a {
-        flex-grow: 1;
-        flex-basis: 0;
-        margin-right: 10px;
+        #achievements-skills section {
+            flex-grow: 1;
+            flex-basis: 0;
+            margin-right: 10px;
+        }
+
+        #achievements-skills section:last-child {
+            margin-right: 0;
+        }
+
+    .qualification-name-abbr {
+        width: 5%;
     }
 
-    #about-options a:last-child {
-        margin-right: 0;
+    .qualification-body {
+        width: 10%;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+        font-size: 14px;
+    }
+
+    #download-pdf,
+    header {
+        display: none;
+    }
+
+    #tagline {
+        color: #ababab;
+    }
+
+    .panel {
+        background: white;
+        border: none;
+    }
+
+        .panel h2 {
+            border-top: 1px solid var(--very-dark-red);
+        }
+
+    .contact-info {
+        margin-bottom: 10px;
+    }
+
+        .contact-info a {
+            color: #ababab;
+        }
+
+        #contact-info-second-page {
+            display: flex;
+        }
+
+    #achievements-skills {
+        margin: 0;
+    }
+
+    .qualification-name-abbr {
+        width: 10%;
+    }
+
+    .qualification-body {
+        width: 25%;
+    }
+
+    .employment-panel {
+        margin-top: 0;
+    }
+
+        .employer-and-time {
+            border-top-style: dashed;
+            border-bottom-style: dashed;
+        }
+
+        .employment-duration {
+            display: inline;
+        }
+    
+    #personal-summary {
+        margin: 0;
+    }
+
+    #qualifications {
+        break-after: page;
+        margin: 0;
     }
 }

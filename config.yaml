@@ -1,7 +1,7 @@
 baseURL: "http://www.crashdive.co.uk/"
 title: "Crash Dive"
 languageCode: "en-GB"
-disableKinds: ["taxonomy", "taxonomyTerm", "RSS"]
+disableKinds: ["taxonomy", "RSS"]
 enableRobotsTXT: true
 disableHugoGeneratorInject: true
 sitemap:
